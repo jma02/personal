@@ -66,7 +66,7 @@
         <p>My current interests are in front-end development, financial technology, and deep learning.</p>
         <p>
            You can connect with me on <a href="https://linkedin.com/in/johnma02">LinkedIn</a>, 
-           or visit my <a href="https://github.com/johnma02">Github</a> via the icons in the header.
+           or visit my <a href="https://github.com/johnma02">GitHub</a> via the icons in the header.
         </p>
         <p>Thanks for checking out my slice of the web.</p>
     </div>
@@ -164,6 +164,5 @@
         font-family: 'Noto Serif', serif;
         font-size: 24px;
         font-weight: 100;
-        
     }
 </style>
