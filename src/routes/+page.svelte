@@ -155,14 +155,15 @@
         padding: 50px;
         width: 100%;
         gap: 30px;
+        @media screen and (max-width: 450px) {
+           gap: 10px;
+           font-size: 18px; 
+        }
         background-color: #FFFCF9;
         color: black;
         font-family: 'Noto Serif', serif;
         font-size: 24px;
         font-weight: 100;
-        & header {
-            font-size: 32px;
-            font-weight: bold;
-        }
+        
     }
 </style>
