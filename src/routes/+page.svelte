@@ -22,7 +22,7 @@
     onMount(() => {
         showBlurb = true;
     });
-    export const prerender = true;
+
 </script>
 
 <svelte:window on:scroll={handleScroll} />
