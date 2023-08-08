@@ -1,7 +1,11 @@
 <script lang='ts'>
     import { onMount } from 'svelte';
     import { fly } from 'svelte/transition';
+    import { dev } from '$app/environment';
+    import { inject } from '@vercel/analytics';
     import nicePicture from '../images/landing.gif'
+
+    inject({ mode: dev ? 'development' : 'production' });
     let showBlurb = false;
     let scrollDistance = 0;
     let headerColor = "rgb(0,0,0,0)"
