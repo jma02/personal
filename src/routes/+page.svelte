@@ -12,7 +12,7 @@
     let headerTextColor = "FFFCF9"
     function handleScroll(event: any) {
         scrollDistance = event.srcElement.scrollingElement.scrollTop;
-        [headerColor, headerTextColor] = (scrollDistance) < 300 ?
+        [headerColor, headerTextColor] = (scrollDistance) < 100 ?
             [
                 headerColor = "rgb(0,0,0,0)",
                 headerTextColor = "#FFFCF9",
