@@ -3,7 +3,7 @@
     import { fly } from 'svelte/transition';
     import { dev } from '$app/environment';
     import { inject } from '@vercel/analytics';
-    import nicePicture from '../images/landing.gif'
+    import me from '../images/me.png';
 
     inject({ mode: dev ? 'development' : 'production' });
     let showBlurb = false;
@@ -51,12 +51,28 @@
 </header>
 
 <div class="landing">
-    <img 
-        src={nicePicture}
-        alt="The eiffel tower."
-        height="100%"
-        width="100%"
-    >
+    <div class="card">
+        <div class="portrait">
+        <img
+            src={me}
+            class="me"
+            alt="This is me."
+        >
+        <p>this is me.</p>
+        </div>
+        <div class="contact">
+            <header><b>Jonathan Ma</b></header>
+            <p>currently: @UD, Chatham Financial</p>  
+            <p>contact: ma.jonathan02@gmail.com</p>
+            <p>location: philly area</p>
+        </div>
+        <div class="interests">
+            <b>interests</b>
+            <li>Spectral Graph Theory</li>
+            <li>Deep Learning</li>
+            <li>Full Stack Development</li>
+        </div>
+    </div>
     {#if showBlurb}
     <div class="blurb">
        <p in:fly={{y:500, duration: 1750}}> Hi.</p>
@@ -66,8 +82,8 @@
 
 <div class="about">
     <div class="bio">
-        <p>I'm a student at the University of Delaware studying Computer Science and Mathematics.</p>
-        <p>My current interests are in front-end development, financial technology, and deep learning.</p>
+        <p>Hello. 👋 I'm a student at the University of Delaware studying Mathematics and Computer Science.</p>
+        <p>My current interests are in spectral graph theory, financial technology, and deep learning.</p>
         <p>
            You can connect with me on <a href="https://linkedin.com/in/johnma02">LinkedIn</a>, 
            or visit my <a href="https://github.com/johnma02">GitHub</a> via the icons in the header.
@@ -127,18 +143,23 @@
         width: 100%;
     }
     .landing {
+        display: flex;
+        flex-direction: row;
+        @media screen and (max-width: 1200px) {
+            flex-direction: column;
+            overflow-y: scroll;
+            gap: 0px;
+        }
+        justify-content: space-evenly;
+        align-items: center;
         height: 120vh;
         width: 100%;
-        img {
-            object-fit: cover
-        }
+        background-image: url("../images/landing.gif");
+        background-size: cover;
     }
     .blurb {
-        position: relative;
-        right: 20%;
-        bottom: 20%;
         font-size: 32px;
-        text-align: right;
+        text-align: center;
     }
     .about {
         display: flex;
@@ -150,6 +171,48 @@
         background-color: #FFFCF9;
         padding: 40px 0px;
     }
+    .portrait {
+        display: flex;
+        flex-direction: column ;
+        text-align: center;
+    }
+    .me {
+        width: 250px;
+        @media screen and (max-width: 450px) {
+            width: 100px;
+        } 
+        border-radius: 5%;
+    }
+
+    .card {
+        display: flex;
+        gap: 35px;
+        @media screen and (max-width: 1200px) {
+            flex-direction: column;
+            overflow-y: scroll;
+            gap: 10px;
+        }
+        @media screen and (max-width: 450px) {
+            font-size: small;
+        }
+        flex-direction: row;
+        align-items: center;
+        justify-content: start;
+        width: 60%;
+        color:#2E4057;
+        padding: 20px;
+        height: 400px;
+        background-color: #fffcf9fa;
+        border-radius: 2.5%;
+    }
+
+    .contact {
+        header {
+            font-family: 'Noto Serif', serif;
+            font-size: x-large;
+        }
+    }
+  
     .bio {
         display: flex;
         flex-direction: column;
@@ -158,9 +221,7 @@
         height: 600px;
         padding: 50px;
         width: 100%;
-        gap: 30px;
         @media screen and (max-width: 450px) {
-           gap: 10px;
            font-size: 18px; 
         }
         background-color: #FFFCF9;
@@ -168,5 +229,8 @@
         font-family: 'Noto Serif', serif;
         font-size: 24px;
         font-weight: 100;
+    }
+    .interests {
+        line-height: 35px;
     }
 </style>
