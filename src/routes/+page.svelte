@@ -82,8 +82,10 @@
 
 <div class="about">
     <div class="bio">
-        <p>Hello. 👋 I'm a student at the University of Delaware studying Mathematics and Computer Science.</p>
-        <p>My current interests are in spectral graph theory, financial technology, and deep learning.</p>
+        <p>Hello. 👋 I'm a student at the University of Delaware studying
+        Mathematics and Computer Science.</p>
+        <p>My current interests are in spectral graph theory, financial
+        technology, and deep learning.</p>
         <p>
            You can connect with me on <a href="https://linkedin.com/in/johnma02">LinkedIn</a>, 
            or visit my <a href="https://github.com/johnma02">GitHub</a> via the icons in the header.
@@ -200,7 +202,7 @@
         justify-content: start;
         width: 60%;
         color:#2E4057;
-        padding: 20px;
+        padding: 35px;
         height: 400px;
         background-color: #fffcf9fa;
         border-radius: 2.5%;
