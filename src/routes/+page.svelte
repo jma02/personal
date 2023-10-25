@@ -239,6 +239,7 @@
         @media screen and (max-width: 1200px) {
             flex-direction: column;
             gap: 10px;
+            height: 800px;
         }
         @media screen and (max-width: 450px) {
            font-size: 18px; 
@@ -287,6 +288,15 @@
         border-color: #2E4057;
         border-style: ridge;
         border-radius: 3px;
+        @media screen and (max-width: 750px) {
+            font-size: medium;
+            grid-template-columns: none;
+            grid-template-rows: repeat(1, 0.25fr 2fr);
+            width: 450px;
+        }
+        @media screen and (max-width: 400px) {
+            width: 250px;
+        }
     }
     .showcase-item {
         display: flex;
@@ -302,5 +312,12 @@
         border-width: 1px;
         border-color: #2E4057;
         border-right-style: ridge;
+        @media screen and (max-width: 750px) {
+            font-size: medium;
+            grid-template-rows: none;
+            grid-template-columns: repeat(1, 0.25fr 2fr);
+            border-right-style: none;
+            border-bottom-style: ridge;;
+        }
     }
 </style>
