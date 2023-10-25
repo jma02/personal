@@ -81,16 +81,25 @@
 </div>
 
 <div class="about">
-    <div class="bio">
-        <p>Hello. 👋 I'm a student at the University of Delaware studying
-        Mathematics and Computer Science.</p>
-        <p>My current interests are in spectral graph theory, financial
-        technology, and deep learning.</p>
-        <p>
-           You can connect with me on <a href="https://linkedin.com/in/johnma02">LinkedIn</a>, 
-           or visit my <a href="https://github.com/johnma02">GitHub</a> via the icons in the header.
-        </p>
-        <p>Thanks for checking out my slice of the web.</p>
+    <div class="main">
+        <div class="whoami">
+            <header class="header-text">about me.</header>
+            <p>Hello. 👋 I am a lifelong learner interested in mathematics, as well as building apps. 
+                I'm currently working at Chatham Financial, building financial SaaS. I am also working
+                under Dr. Yao Hu @ the University of Delaware, modeling fertilizer runoff risk in the Great Lakes.
+            </p>
+            <p>
+                Outside of work,
+                I am an urban life enthusiast, cycling enjoyer, and weightlifter.
+            </p>
+        </div>
+        <div class="showcase">
+            <div class="navbar"></div>
+            <div class="showcase-item">
+                <header class="header-text-small">what am I working on?</header>
+                <p>come back soon to find out...</p>
+            </div>
+        </div>
     </div>
 
 </div>
@@ -98,7 +107,8 @@
     :global(body){
         background-color: #2E4057;
         color: #FFFCF9;
-        font-family: 'Fira Code', monospace;
+        //font-family: 'Fira Code', monospace;
+        font-family: 'Work Sans';
         margin: 0;
     }
     .sticky-header {
@@ -112,7 +122,8 @@
         background-color: var(--headerColor);
         transition: background-color .55s ease;
         color: var(--headerTextColor);
-        font-family: 'Fira Code', monospace;
+        //font-family: 'Fira Code', monospace;
+        font-family: 'Work Sans';
         font-weight: bold;
     }
     .header-item {
@@ -162,6 +173,8 @@
     .blurb {
         font-size: 32px;
         text-align: center;
+        font-family: 'Fira Code', monospace;
+        text-shadow: 2px 2px 4px #000;
     }
     .about {
         display: flex;
@@ -215,14 +228,18 @@
         }
     }
   
-    .bio {
+    .main {
         display: flex;
-        flex-direction: column;
-        justify-content: space-around;
+        flex-direction: row;
+        justify-content: space-between;
         align-items: center;
         height: 600px;
         padding: 50px;
         width: 100%;
+        @media screen and (max-width: 1200px) {
+            flex-direction: column;
+            gap: 10px;
+        }
         @media screen and (max-width: 450px) {
            font-size: 18px; 
         }
@@ -234,5 +251,56 @@
     }
     .interests {
         line-height: 35px;
+    }
+    .whoami {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        font-family: 'Work Sans';
+        font-size: large;
+        font-weight: 300;
+        width: 40%;
+        @media screen and (max-width: 1200px) {
+            flex-direction: column;
+            width: 85%;
+        }
+        @media screen and (max-width: 450px) {
+            font-size: medium;
+        }
+    }
+    .header-text {
+            font-size: xxx-large;
+            &-small {
+                font-size: x-large;
+                font-weight: 400;
+                color:#2E4057;
+            }
+            font-family: 'Noto Serif', serif;
+            font-weight: 400;
+        }
+    .showcase {
+        display: grid;
+        grid-template-columns: repeat(1, 0.25fr 2fr);
+        width: 600px;
+        height: 400px;
+        border-width: 1px;
+        border-color: #2E4057;
+        border-style: ridge;
+        border-radius: 3px;
+    }
+    .showcase-item {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        font-family: 'Work Sans';
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .navbar {
+        display: grid;
+        grid-template-rows: repeat(1, 1fr);
+        border-width: 1px;
+        border-color: #2E4057;
+        border-right-style: ridge;
     }
 </style>
