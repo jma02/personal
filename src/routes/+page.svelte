@@ -294,8 +294,8 @@
             grid-template-rows: repeat(1, 0.25fr 2fr);
             width: 450px;
         }
-        @media screen and (max-width: 400px) {
-            width: 250px;
+        @media screen and (max-width: 600px) {
+            width: 95%;
         }
     }
     .showcase-item {
