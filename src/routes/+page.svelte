@@ -51,31 +51,35 @@
 </header>
 
 <div class="landing">
-    <div class="card">
-        <div class="portrait">
-        <img
-            src={me}
-            class="me"
-            alt="This is me."
-        >
-        <p>this is me.</p>
-        </div>
-        <div class="contact">
-            <header><b>Jonathan Ma</b></header>
-            <p>currently: @UD, Chatham Financial</p>  
-            <p>contact: ma.jonathan02@gmail.com</p>
-            <p>location: philly area</p>
-        </div>
-        <div class="interests">
-            <b>interests</b>
-            <li>Spectral Graph Theory</li>
-            <li>Deep Learning</li>
-            <li>Full Stack Development</li>
+    <div class="card-container">
+        <div class="card">
+            <div class="portrait">
+            <img
+                src={me}
+                class="me"
+                alt="This is me."
+            >
+            <p>this is me.</p>
+            </div>
+            <div class="contact">
+                <header><b>Jonathan Ma</b></header>
+                <p>currently: @UD, Chatham Financial</p>  
+                <p>contact: ma.jonathan02@gmail.com</p>
+                <p>location: philly area</p>
+            </div>
+            <div class="interests">
+                <b>interests</b>
+                <li>Spectral Graph Theory</li>
+                <li>Deep Learning</li>
+                <li>Full Stack Development</li>
+            </div>
         </div>
     </div>
     {#if showBlurb}
-    <div class="blurb">
-       <p in:fly={{y:500, duration: 1750}}> Hi.</p>
+    <div class="blurb-container">
+        <div class="blurb">
+           <p in:fly={{y:500, duration: 1750}}> Hi.</p>
+        </div>
     </div>
     {/if}
 </div>
@@ -157,9 +161,8 @@
     }
     .landing {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         @media screen and (max-width: 1200px) {
-            flex-direction: column;
             overflow-y: scroll;
             gap: 0px;
         }
@@ -173,6 +176,7 @@
     .blurb {
         font-size: 32px;
         text-align: center;
+        padding-right: 50px;
         font-family: 'Fira Code', monospace;
         text-shadow: 2px 2px 4px #000;
     }
@@ -213,12 +217,12 @@
         flex-direction: row;
         align-items: center;
         justify-content: start;
-        width: 60%;
+        width: 70%;
         color:#2E4057;
         padding: 35px;
         height: 400px;
         background-color: #fffcf9fa;
-        border-radius: 2.5%;
+        border-radius: 10px;
     }
 
     .contact {
@@ -319,5 +323,19 @@
             border-right-style: none;
             border-bottom-style: ridge;;
         }
+    }
+    .card-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+    }
+    .blurb-container {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: flex-end;
+        align-items: center;
     }
 </style>
