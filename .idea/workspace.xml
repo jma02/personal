@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="98b28a60-656c-414a-bc68-ba7a359e15bd" name="Changes" comment="fix: deprecated specifier">
-      <change afterPath="$PROJECT_DIR$/src/images/corgi.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/salon-static.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/salon.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/components/card.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/components/header.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/components/showcase.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/components/card.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/components/card.svelte" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +110,7 @@
       <updated>1691033870686</updated>
       <workItem from="1691033872401" duration="783000" />
       <workItem from="1706062090375" duration="87000" />
-      <workItem from="1706062267550" duration="5631000" />
+      <workItem from="1706062267550" duration="6856000" />
     </task>
     <task id="LOCAL-00001" summary="fix: deprecated specifier">
       <option name="closed" value="true" />

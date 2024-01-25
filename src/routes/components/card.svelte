@@ -49,7 +49,7 @@ import me from "../../images/me.png";
     flex-direction: row;
     align-items: center;
     justify-content: start;
-    width: 70%;
+    width: min(70%,  1000px);
     color: #2E4057;
     padding: 35px;
     height: 400px;
