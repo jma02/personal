@@ -53,13 +53,8 @@
     <div class="main">
         <div class="whoami">
             <header class="header-text">about me.</header>
-            <p>Hello. 👋 I am a lifelong learner interested in mathematics, as well as building apps.
-                I'm currently working at Chatham Financial, building financial SaaS. I am also working
-                under Dr. Yao Hu @ the University of Delaware, modeling fertilizer runoff risk in the Great Lakes.
-            </p>
             <p>
-                Outside of work,
-                I am an urban life enthusiast, cycling enjoyer, and weightlifter.
+                Hello.
             </p>
         </div>
         <svelte:component this={showcase}/>
