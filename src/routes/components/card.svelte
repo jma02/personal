@@ -16,13 +16,13 @@ import me from "../../images/me.png";
             <header><b>Jonathan Ma</b></header>
             <p>currently: @UD, Chatham Financial</p>
             <p>contact: ma.jonathan02@gmail.com</p>
-            <p>location: philly area</p>
+            <p>location: Wilmington, Delaware</p>
         </div>
         <div class="interests">
             <b>interests</b>
             <li>Spectral Graph Theory</li>
+            <li>Algebra (maybe)</li>
             <li>Deep Learning</li>
-            <li>Full Stack Development</li>
         </div>
     </div>
 </div>
