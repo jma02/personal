@@ -14,7 +14,7 @@ import me from "../../images/me.png";
         </div>
         <div class="contact">
             <header><b>Jonathan Ma</b></header>
-            <p>currently: @UD, Chatham Financial</p>
+            <p>currently: A math major at the University of Delaware</p>
             <p>contact: ma.jonathan02@gmail.com</p>
             <p>location: Wilmington, Delaware</p>
         </div>
