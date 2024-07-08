@@ -10,12 +10,12 @@
     <div class="header-item">Jonathan Ma</div>
     <div class="spacer"/>
     <div class="header-item">
-        <a href="https://github.com/johnma02">
+        <a href="https://github.com/jma02">
             <i class="devicon-github-original"></i>
         </a>
     </div>
     <div class="header-item">
-        <a href="https://linkedin.com/in/johnma02">
+        <a href="https://linkedin.com/in/jma02">
             <i class="devicon-linkedin-plain"></i>
         </a>
     </div>
