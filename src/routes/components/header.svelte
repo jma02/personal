@@ -15,7 +15,7 @@
         </a>
     </div>
     <div class="header-item">
-        <a href="https://linkedin.com/in/jma02">
+        <a href="https://linkedin.com/in/ma-jonathan">
             <i class="devicon-linkedin-plain"></i>
         </a>
     </div>
