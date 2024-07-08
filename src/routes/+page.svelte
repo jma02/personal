@@ -53,8 +53,11 @@
     <div class="main">
         <div class="whoami">
             <header class="header-text">about me.</header>
-            <p>
-                Hello.
+             <p>I currently work for
+                <a href={"https://www.chathamfinancial.com/"}>Chatham Financial,</a>
+            where I help develop analytic software products for private equity companies such as Blackstone.
+           I am graduating from the University of Delaware this Spring with degrees in Mathematics and Computer Science.
+            My other interests are olympic weightlifting, and cycling.
             </p>
         </div>
         <svelte:component this={showcase}/>
