@@ -5,8 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="98b28a60-656c-414a-bc68-ba7a359e15bd" name="Changes" comment="fix: deprecated specifier">
+      <change afterPath="$PROJECT_DIR$/.husky/pre-commit" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.prettierrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eslint.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/me2.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/corgi.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/corgi.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/landing.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/landing.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/me.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/me.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/milk-and-mocha.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/milk-and-mocha.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/salon-static.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/salon-static.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/salon.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/salon.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+page.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/components/card.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/components/card.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/components/showcase.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/components/showcase.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/svelte.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/svelte.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vite.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +73,7 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< Updated upstream
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
@@ -68,6 +89,23 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.tools&quot;,
     &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\jma\\WebstormProjects\\personal\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+=======
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/jma/WebstormProjects/personal",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "configurable.group.tools",
+    "ts.external.directory.path": "C:\\Users\\jma\\WebstormProjects\\personal\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+>>>>>>> Stashed changes
   }
 }</component>
   <component name="RecentsManager">
@@ -75,6 +113,7 @@
       <recent name="C:\Users\jma\WebstormProjects\personal\src\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jma\WebstormProjects\personal\static" />
       <recent name="C:\Users\jma\WebstormProjects\personal\src\images" />
     </key>
   </component>
@@ -111,6 +150,7 @@
       <workItem from="1691033872401" duration="783000" />
       <workItem from="1706062090375" duration="87000" />
       <workItem from="1706062267550" duration="6856000" />
+      <workItem from="1720917140710" duration="4212000" />
     </task>
     <task id="LOCAL-00001" summary="fix: deprecated specifier">
       <option name="closed" value="true" />
