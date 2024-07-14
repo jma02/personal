@@ -3,7 +3,6 @@ import pluginJs from '@eslint/js';
 import tseslint from 'typescript-eslint';
 import prettierPlugin from 'eslint-plugin-prettier';
 import prettierConfig from 'eslint-config-prettier';
-import eslintPluginSvelte from 'eslint-plugin-svelte';
 
 export default [
   {
@@ -18,6 +17,5 @@ export default [
   },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
-  ...eslintPluginSvelte.configs['flat/recommended'],
   prettierConfig,
 ];
