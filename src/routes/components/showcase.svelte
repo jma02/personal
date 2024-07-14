@@ -290,7 +290,7 @@
     }
     margin: 20px;
     border-style: ridge;
-    border-width: 1px;
+    border-width: 0px;
     border-radius: 2px;
     border-color: #2e4057;
   }
