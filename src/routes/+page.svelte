@@ -1,13 +1,10 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { fly } from 'svelte/transition';
-  import { dev } from '$app/environment';
-  import { inject } from '@vercel/analytics';
   import card from './components/card.svelte';
   import header from './components/header.svelte';
   import showcase from './components/showcase.svelte';
 
-  inject({ mode: dev ? 'development' : 'production' });
   let showBlurb = false;
   let scrollDistance = 0;
   let headerColor = 'rgb(0,0,0,0)';
