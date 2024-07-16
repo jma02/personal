@@ -148,7 +148,7 @@
       width: 450px;
     }
     @media screen and (max-width: 600px) {
-      width: 95%;
+      width: 300px;
     }
   }
 
@@ -213,12 +213,12 @@
       padding: 10px;
       grid-area: header;
       font-family: 'Noto Serif', serif;
-      font-size: x-large;
-      font-weight: 500;
       text-align: center;
       border-bottom-style: ridge;
       border-width: 1px;
       border-color: #2e4057;
+      font-weight: 400;
+      font-size: 1.17em;
     }
 
     &-content {
@@ -241,6 +241,10 @@
   .barber-pole {
     width: 50px;
     height: 50px;
+    @media screen and (max-width: 500px) {
+      width: 35px;
+      height: 35px;
+    }
     cursor: pointer;
   }
 
@@ -269,10 +273,17 @@
   .mongo {
     width: 50px;
     height: 50px;
+    @media screen and (max-width: 500px) {
+      width: 35px;
+      height: 35px;
+    }
   }
 
   .icon {
     font-size: 40px;
+    @media screen and (max-width: 500px) {
+      font-size: 35px;
+    }
     text-align: center;
     cursor: pointer;
     &:hover {
@@ -287,6 +298,9 @@
       width: 305px;
       object-fit: cover;
       object-position: top;
+    }
+    @media screen and (max-width: 600px) {
+      width: 200px;
     }
     margin: 20px;
     border-style: ridge;

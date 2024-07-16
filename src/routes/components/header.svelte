@@ -4,7 +4,9 @@
 
 <header
   class="sticky-header"
-  style="--headerColor: {headerColor};
+  style="
+
+--headerColor: {headerColor};
            --headerTextColor: {headerTextColor}"
 >
   <div class="header-item">Jonathan Ma</div>

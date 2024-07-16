@@ -6,29 +6,47 @@
     </div>
     <div class="card-snd-flexbox">
       <div class="contact">
-        <header><b>Jonathan Ma</b></header>
+        <h3>Jonathan Ma</h3>
         <div class="contact-item">
-          <span class="material-symbols-outlined">school</span>:
+          <span class="material-symbols-outlined">school</span>&mdash;
           <p>University of Delaware</p>
         </div>
         <div class="contact-item">
-          <span class="material-symbols-outlined">mail</span>:
+          <span class="material-symbols-outlined">mail</span>&mdash;
           <a href="mailto:ma.jonathan02@gmail.com" class="card-href"
             >ma.jonathan02@gmail.com</a
           >
         </div>
         <div>
           <div class="contact-item">
-            <span class="material-symbols-outlined"> location_on</span>:
+            <span class="material-symbols-outlined"> location_on</span>&mdash;
             <p>Wilmington, Delaware</p>
           </div>
         </div>
       </div>
       <div class="interests">
-        <b>interests</b>
-        <li>Spectral Graph Theory</li>
-        <li>Algebra (maybe)</li>
-        <li>Deep Learning</li>
+        <div class="interests-item">
+          <span class="material-symbols-outlined"> import_contacts </span>
+          <p>interests</p>
+        </div>
+        <div class="interests-item">
+          <span class="material-symbols-outlined">
+            keyboard_double_arrow_right
+          </span>
+          Spectral Graph Theory
+        </div>
+        <div class="interests-item">
+          <span class="material-symbols-outlined">
+            keyboard_double_arrow_right
+          </span>
+          Deep Learning
+        </div>
+      </div>
+      <div class="interests-item">
+        <span class="material-symbols-outlined">
+          keyboard_double_arrow_right
+        </span>
+        Applied Group Theory
       </div>
     </div>
   </div>
@@ -43,30 +61,39 @@
     width: 100%;
   }
   .card {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 0.5fr);
+
+    border-width: 1px;
+    border-color: #2e4057;
+    border-style: ridge;
+    border-radius: 5px;
     gap: 35px;
-    @media screen and (max-width: 1200px) {
-      flex-direction: column;
+    width: 600px;
+    @media screen and (max-width: 800px) {
+      grid-template-columns: none;
+      grid-template-rows: repeat(2, 0.5fr);
+      align-items: center;
+      justify-content: center;
       overflow-y: scroll;
       gap: 10px;
+      width: 62.5%;
     }
-    @media screen and (max-width: 450px) {
+    @media screen and (max-width: 600px) {
       font-size: small;
     }
-    flex-direction: row;
     align-items: center;
     justify-content: start;
-    width: min(50%, 600px);
     color: #2e4057;
-    padding: 35px;
     height: 400px;
     background-color: #fffcf9;
-    border-radius: 10px;
+    padding: 35px;
   }
 
   .card-snd-flexbox {
     display: flex;
     flex-direction: column;
+    gap: 10px;
   }
 
   .card-href {
@@ -78,24 +105,29 @@
     display: flex;
     flex-direction: column;
     text-align: center;
+    align-items: center;
   }
 
   .me {
     width: 250px;
-    border: 1px solid #fffcf9;
     @media screen and (max-width: 450px) {
-      width: 100px;
+      width: 175px;
     }
-    border-radius: 5%;
+    border-width: 1px;
+    border-color: #2e4057;
+    border-style: ridge;
+    border-radius: 3px;
   }
 
   .contact {
-    header {
+    h3 {
       font-family: 'Noto Serif', serif;
       font-size: x-large;
+      font-weight: 400;
     }
     &-item {
       display: flex;
+      flex-direction: row;
       align-items: center;
       gap: 10px;
     }
@@ -103,5 +135,12 @@
 
   .interests {
     line-height: 35px;
+
+    &-item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+    }
   }
 </style>

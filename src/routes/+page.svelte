@@ -53,7 +53,10 @@
         are olympic weightlifting, and cycling.
       </p>
     </div>
-    <svelte:component this={showcase} />
+    <div class="projects">
+      <h3>projects</h3>
+      <svelte:component this={showcase} />
+    </div>
   </div>
 </div>
 
@@ -64,18 +67,19 @@
     //font-family: 'Fira Code', monospace;
     font-family: 'Work Sans';
     margin: 0;
+    width: 100%;
   }
 
   .landing {
     display: flex;
     flex-direction: column;
+    overflow: hidden;
     @media screen and (max-width: 1200px) {
-      overflow-y: scroll;
-      gap: 0px;
+      gap: 0;
     }
     justify-content: space-evenly;
     align-items: center;
-    height: 120vh;
+    height: 1000px;
     width: 100%;
     background-image: url('/images/landing.gif');
     background-size: cover;
@@ -84,7 +88,8 @@
   .blurb {
     font-size: 32px;
     text-align: center;
-    padding-right: 50px;
+    margin-right: 50px;
+    margin-bottom: 25px;
     font-family: 'Fira Code', monospace;
     text-shadow: 2px 2px 4px #000;
   }
@@ -94,7 +99,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: 100vh;
+    height: 1000px;
     width: 100%;
     background-color: #fffcf9;
     padding: 40px 0px;
@@ -116,6 +121,7 @@
     }
     @media screen and (max-width: 450px) {
       font-size: 18px;
+      padding: 0;
     }
     background-color: #fffcf9;
     color: black;
@@ -131,10 +137,16 @@
     font-family: 'Work Sans';
     font-size: large;
     font-weight: 300;
-    width: 40%;
-    @media screen and (max-width: 1200px) {
+    width: 500px;
+    @media screen and (max-width: 1600px) {
       flex-direction: column;
-      width: 85%;
+      width: 600px;
+    }
+    @media screen and (max-width: 750px) {
+      width: 450px;
+    }
+    @media screen and (max-width: 600px) {
+      width: 300px;
     }
     @media screen and (max-width: 450px) {
       font-size: medium;
@@ -145,6 +157,9 @@
     font-size: xxx-large;
     font-family: 'Noto Serif', serif;
     font-weight: 400;
+    @media screen and (max-width: 450px) {
+      font-size: xx-large;
+    }
   }
 
   .blurb-container {
@@ -153,5 +168,11 @@
     width: 100%;
     justify-content: flex-end;
     align-items: center;
+  }
+
+  .projects {
+    h3 {
+      font-weight: 400;
+    }
   }
 </style>
