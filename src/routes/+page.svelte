@@ -73,6 +73,7 @@
     overflow: hidden;
     @media screen and (max-width: 1200px) {
       gap: 0;
+      height: 1250px;
     }
     justify-content: space-evenly;
     align-items: center;

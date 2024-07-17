@@ -70,22 +70,22 @@
     border-radius: 5px;
     gap: 35px;
     width: 600px;
+    height: 400px;
     @media screen and (max-width: 800px) {
       grid-template-columns: none;
-      grid-template-rows: repeat(2, 0.5fr);
+      grid-template-rows: 0.25fr 2fr;
       align-items: center;
       justify-content: center;
-      overflow-y: scroll;
       gap: 10px;
       width: 62.5%;
+      height: 775px;
     }
     @media screen and (max-width: 600px) {
-      font-size: small;
+      font-size: smaller;
     }
     align-items: center;
     justify-content: start;
     color: #2e4057;
-    height: 400px;
     background-color: #fffcf9;
     padding: 35px;
   }
@@ -110,9 +110,6 @@
 
   .me {
     width: 250px;
-    @media screen and (max-width: 450px) {
-      width: 175px;
-    }
     border-width: 1px;
     border-color: #2e4057;
     border-style: ridge;
