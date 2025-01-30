@@ -33,20 +33,20 @@
           <span class="material-symbols-outlined">
             keyboard_double_arrow_right
           </span>
-          Spectral Graph Theory
+          Scientific ML
         </div>
         <div class="interests-item">
           <span class="material-symbols-outlined">
             keyboard_double_arrow_right
           </span>
-          Deep Learning
+          Applied Mathematics
         </div>
       </div>
       <div class="interests-item">
         <span class="material-symbols-outlined">
           keyboard_double_arrow_right
         </span>
-        Applied Group Theory
+        Spectral Graph Theory
       </div>
     </div>
   </div>
