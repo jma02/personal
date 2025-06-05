@@ -27,7 +27,7 @@
       <div class="interests">
         <div class="interests-item">
           <span class="material-symbols-outlined"> import_contacts </span>
-          <p>interests</p>
+          <p>Interests</p>
         </div>
         <div class="interests-item">
           <span class="material-symbols-outlined">
