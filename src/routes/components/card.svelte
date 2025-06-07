@@ -48,12 +48,6 @@
         </span>
            Geometry in Applied Mathematics
       </div>
-      <div class="interests-item">
-        <span class="material-symbols-outlined">
-          keyboard_double_arrow_right
-        </span>
-        Spectral Graph Theory
-      </div>
     </div>
   </div>
 </div>
