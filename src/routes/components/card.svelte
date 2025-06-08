@@ -39,7 +39,7 @@
           <span class="material-symbols-outlined">
             keyboard_double_arrow_right
           </span>
-           Neural Operators
+           Inverse Problems
         </div>
       </div>
       <div class="interests-item">
