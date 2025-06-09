@@ -9,23 +9,55 @@
   let scrollDistance = 0;
   let headerColor = 'rgb(0,0,0,0)';
   let headerTextColor = 'FFFCF9';
-  function handleScroll(
-    event: UIEvent & { currentTarget: EventTarget & Window }
-  ) {
-    scrollDistance = event.currentTarget!.scrollY;
-    [headerColor, headerTextColor] =
-      scrollDistance < 100
-        ? [(headerColor = 'rgb(0,0,0,0)'), (headerTextColor = '#FFFCF9')]
-        : [(headerColor = '#FFFCF9'), (headerTextColor = '#2E4057')];
+  let darkMode = false;
+  let isClient = false;
+
+  function updateHeaderColors(scroll: number, dark: boolean) {
+    if (scroll < 100) {
+      [headerColor, headerTextColor] = dark
+              ? ['rgba(0, 0, 0, 0)', '#FFFCF9']
+              : ['rgba(0, 0, 0, 0)', '#FFFCF9'];
+    } else {
+      [headerColor, headerTextColor] = dark
+              ? ['#121212', '#FFFCF9']
+              : ['#2a3a52', '#FFFCF9'];
+    }
   }
 
-  onMount(() => {
-    showBlurb = true;
-  });
+
+  $: {
+    if (isClient) {
+      if (darkMode) {
+        document.body.classList.add('dark');
+      } else {
+        document.body.classList.remove('dark');
+      }
+      updateHeaderColors(scrollDistance, darkMode);
+
+    }
+  }
+  function handleScroll(event: UIEvent & { currentTarget: EventTarget & Window }) {
+    scrollDistance = event.currentTarget.scrollY;
+    updateHeaderColors(scrollDistance, darkMode);
+  }
+
+    onMount(() => {
+      isClient = true;
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (prefersDark) {
+        darkMode = true;
+      }
+      showBlurb = true;
+    });
+
+
+
 </script>
 
 <svelte:window on:scroll={handleScroll} />
-<svelte:component this={header} {headerColor} {headerTextColor} />
+<svelte:component this={header} {headerColor} {headerTextColor}
+                  on:toggleDarkMode={() => (darkMode = !darkMode)}
+/>
 <div class="landing">
   <svelte:component this={card} />
   {#if showBlurb}
@@ -40,24 +72,31 @@
 <div class="about">
   <div class="main">
     <div class="whoami">
-      <header class="header-text">about me.</header>
+      <header class="header-text">About me</header>
       <p>
-        I currently work for
-        <a href={'https://www.chathamfinancial.com/'}>Chatham Financial,</a>
-        where I help develop analytic software products for private equity companies
-        such as Blackstone. I am graduating from the University of Delaware this
-        Spring with degrees in Mathematics and Computer Science. My other interests
-        are olympic weightlifting, and cycling.
+        I'm a graduate of the University of Delaware. I studied mathematics and computer science,
+        with a focus on applied mathematics.
+        Broadly I am interested in scientific machine learning, diffusion models, and
+        PDE inverse problems.
       </p>
     </div>
     <div class="projects">
-      <h3>projects</h3>
+      <h3>Projects</h3>
       <svelte:component this={showcase} />
     </div>
   </div>
 </div>
 
 <style lang="scss">
+  :global(body),
+  :global(body.dark),
+  :global(body .about),
+  :global(body .main),
+  :global(body .projects h3),
+  :global(body .blurb) {
+    transition: background-color 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+  }
+
   :global(body) {
     background-color: #2e4057;
     color: #fffcf9;
@@ -66,6 +105,30 @@
     margin: 0;
     width: 100%;
   }
+
+  :global(body.dark) {
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+
+  :global(body.dark) .blurb {
+    text-shadow: 2px 2px 4px #111;
+  }
+
+  :global(body.dark) .about {
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+  }
+
+  :global(body.dark) .main {
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+  }
+
+  :global(body.dark) .projects h3 {
+    color: #ddd;
+  }
+
 
   .landing {
     display: flex;
@@ -93,6 +156,7 @@
   }
 
   .about {
+
     display: flex;
     flex-direction: row;
     justify-content: space-between;

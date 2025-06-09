@@ -1,5 +1,12 @@
 <script>
+  import {createEventDispatcher} from "svelte";
+
   export let headerColor, headerTextColor;
+  const dispatch = createEventDispatcher();
+
+  function toggleDarkMode() {
+    dispatch('toggleDarkMode');
+  }
 </script>
 
 <header
@@ -11,9 +18,15 @@
 >
   <div class="header-item">Jonathan Ma</div>
   <div class="spacer" />
+  <div class="header-item"
+    on:click={toggleDarkMode}>
+    <i  class="material-symbols-outlined">
+dark_mode
+</i>
+  </div>
   <div class="header-item">
     <a href="https://github.com/jma02">
-      <i class="devicon-github-original"></i>
+      <i class="devicon-github-original" ></i>
     </a>
   </div>
   <div class="header-item">
@@ -24,6 +37,7 @@
 </header>
 
 <style lang="scss">
+
   .sticky-header {
     position: fixed;
     display: flex;
@@ -40,11 +54,13 @@
     font-weight: bold;
   }
 
+
   .header-item {
     padding: 10px;
     font-size: 24px;
     white-space: nowrap;
     transition: transform 0.3s ease;
+    cursor: pointer;
 
     a {
       text-decoration: none;

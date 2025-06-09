@@ -15,7 +15,7 @@
         on:click={() => (selectedTab = 0)}
         on:keydown={() => (selectedTab = 0)}
         src={mouseOver
-          ? '/images/salon-new.gif'
+          ? '/images/final-kapper.gif'
           : '/images/salon-static-transparent.png'}
         class="barber-pole"
         alt="A barber pole"
@@ -132,6 +132,53 @@
 </div>
 
 <style lang="scss">
+  :global(body),
+  :global(body .showcase) {
+    transition: background-color 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+  }
+  :global(body.dark) .showcase {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    border-color: #888;
+  }
+
+  :global(body.dark) .navbar {
+    background-color: #2c2c2c;
+    border-color: #888;
+  }
+
+  :global(body.dark) .navbar-item-selected {
+    box-shadow: inset 3px 0 0 #888;
+    @media screen and (max-width: 750px) {
+      box-shadow: inset 0 -3px 0 #888;
+    }
+  }
+
+  :global(body.dark) .showcase-item-header {
+    background-color: #2c2c2c;
+    color: #f0f0f0;
+    border-color: #888;
+  }
+
+  :global(body.dark) .showcase-item-content {
+    color: #d0d0d0;
+  }
+
+  :global(body.dark) a {
+    color: #9fd3c7;
+  }
+
+  :global(body.dark) .img {
+    border-color: #888;
+  }
+
+  :global(body.dark) .icon,
+  :global(body.dark) .mongo,
+  :global(body.dark) .ada,
+  :global(body.dark) .barber-pole {
+    filter: brightness(0.85);
+  }
+
   .showcase {
     display: grid;
     grid-template-columns: repeat(1, 0.25fr 2fr);

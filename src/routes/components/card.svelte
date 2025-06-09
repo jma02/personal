@@ -2,7 +2,7 @@
   <div class="card">
     <div class="portrait">
       <img src="/images/me2.png" class="me" alt="This is me." />
-      <p>this is me.</p>
+      <p>Me and the Harvard Mark I.</p>
     </div>
     <div class="card-snd-flexbox">
       <div class="contact">
@@ -53,6 +53,37 @@
 </div>
 
 <style lang="scss">
+  :global(body),
+  :global(body .card) {
+    transition: background-color 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+  }
+  :global(body.dark) .card {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    border-color: #888;
+  }
+
+  :global(body.dark) .card-href {
+    color: #9fd3c7;
+  }
+
+  :global(body.dark) .me {
+    border-color: #888;
+  }
+
+  :global(body.dark) .contact h3 {
+    color: #ffffff;
+  }
+
+  :global(body.dark) .contact-item p,
+  :global(body.dark) .interests-item {
+    color: #d0d0d0;
+  }
+
+  :global(body.dark) .material-symbols-outlined {
+    color: #bbbbbb;
+  }
+
   .card-container {
     display: flex;
     justify-content: center;
