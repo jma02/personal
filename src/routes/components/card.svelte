@@ -33,20 +33,20 @@
           <span class="material-symbols-outlined">
             keyboard_double_arrow_right
           </span>
-           Diffusion Models for PDEs
+           Diffusion Models 🌫️😶‍🌫️😀MCMC📈📉🔁
         </div>
         <div class="interests-item">
           <span class="material-symbols-outlined">
             keyboard_double_arrow_right
           </span>
-           Inverse Problems
+           (PDE) Inverse Problems👀➡️🧩
         </div>
       </div>
       <div class="interests-item">
         <span class="material-symbols-outlined">
           keyboard_double_arrow_right
         </span>
-           Geometry in Applied Mathematics
+           Reading about geometry🌐🗺️ in Applied Mathematics 👀
       </div>
     </div>
   </div>
