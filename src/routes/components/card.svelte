@@ -33,7 +33,7 @@
           <span class="material-symbols-outlined">
             keyboard_double_arrow_right
           </span>
-           Diffusion Models 🌫️😶‍🌫️😀MCMC📈📉🔁
+           Diffusion🌫️😶‍🌫️😀MCMC📈📉🔁
         </div>
         <div class="interests-item">
           <span class="material-symbols-outlined">
@@ -46,7 +46,7 @@
         <span class="material-symbols-outlined">
           keyboard_double_arrow_right
         </span>
-          Geometry🌐🗺️
+          Geometry🌐🗺️Spectral Graph Theory🎼
       </div>
     </div>
   </div>
