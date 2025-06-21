@@ -46,7 +46,7 @@
         <span class="material-symbols-outlined">
           keyboard_double_arrow_right
         </span>
-           Reading about geometry🌐🗺️ in Applied Mathematics 👀
+          Geometry🌐🗺️
       </div>
     </div>
   </div>
