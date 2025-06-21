@@ -78,6 +78,9 @@
         with a focus on applied mathematics.
         Broadly I am interested in scientific machine learning, diffusion models, and
         PDE inverse problems.
+
+        I'm hoping to populate this page with what I'm working on soon!
+        In the meantime, please feel free to reach out to me via email or Linkedin to connect!
       </p>
     </div>
     <div class="projects">
