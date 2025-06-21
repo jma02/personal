@@ -46,7 +46,7 @@
         <span class="material-symbols-outlined">
           keyboard_double_arrow_right
         </span>
-Geometry🌎🗺️and much more!👀👀
+and much more!👀👀
       </div>
     </div>
   </div>
