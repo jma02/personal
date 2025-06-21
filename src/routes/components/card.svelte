@@ -46,7 +46,7 @@
         <span class="material-symbols-outlined">
           keyboard_double_arrow_right
         </span>
-          Geometry🌐🗺️Spectral Graph Theory🎼
+Geometry🌎🗺️and much more!👀👀
       </div>
     </div>
   </div>
