@@ -33,20 +33,20 @@
           <span class="material-symbols-outlined">
             keyboard_double_arrow_right
           </span>
-           Diffusion🌫️😶‍🌫️😀MCMC📈📉🔁
+          Generative models
         </div>
         <div class="interests-item">
           <span class="material-symbols-outlined">
             keyboard_double_arrow_right
           </span>
-           (PDE) Inverse Problems👀➡️🧩
+Inverse problems
         </div>
       </div>
       <div class="interests-item">
         <span class="material-symbols-outlined">
           keyboard_double_arrow_right
         </span>
-and much more!👀👀
+and much more
       </div>
     </div>
   </div>
