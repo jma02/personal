@@ -43,8 +43,5 @@
     "@vercel/speed-insights": "^1.0.12",
     "eslint": "^8.57.0",
     "prettier-plugin-svelte": "^3.0.2"
-  },
-  "engines": {
-    "node": "22.x"
   }
 }
