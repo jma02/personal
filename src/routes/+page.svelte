@@ -6,58 +6,14 @@
   import showcase from './components/showcase.svelte';
 
   let showBlurb = false;
-  let scrollDistance = 0;
-  let headerColor = 'rgb(0,0,0,0)';
-  let headerTextColor = 'FFFCF9';
-  let darkMode = false;
-  let isClient = false;
-
-  function updateHeaderColors(scroll: number, dark: boolean) {
-    if (scroll < 100) {
-      [headerColor, headerTextColor] = dark
-              ? ['rgba(0, 0, 0, 0)', '#FFFCF9']
-              : ['rgba(0, 0, 0, 0)', '#FFFCF9'];
-    } else {
-      [headerColor, headerTextColor] = dark
-              ? ['#121212', '#FFFCF9']
-              : ['#2a3a52', '#FFFCF9'];
-    }
-  }
-
-
-  $: {
-    if (isClient) {
-      if (darkMode) {
-        document.body.classList.add('dark');
-      } else {
-        document.body.classList.remove('dark');
-      }
-      updateHeaderColors(scrollDistance, darkMode);
-
-    }
-  }
-  function handleScroll(event: UIEvent & { currentTarget: EventTarget & Window }) {
-    scrollDistance = event.currentTarget.scrollY;
-    updateHeaderColors(scrollDistance, darkMode);
-  }
-
-    onMount(() => {
-      isClient = true;
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      if (prefersDark) {
-        darkMode = true;
-      }
-      showBlurb = true;
-    });
-
-
+  
+  onMount(() => {
+    showBlurb = true;
+  });
 
 </script>
 
-<svelte:window on:scroll={handleScroll} />
-<svelte:component this={header} {headerColor} {headerTextColor}
-                  on:toggleDarkMode={() => (darkMode = !darkMode)}
-/>
+<svelte:component this={header} />
 <div class="landing">
   <svelte:component this={card} />
   {#if showBlurb}
@@ -76,9 +32,8 @@
       <p>
         I'm a graduate of the University of Delaware. I studied mathematics and computer science,
         with a focus on applied mathematics.
-        Broadly I am interested in scientific machine learning, diffusion and
-        flow matching models, and
-        solving PDE inverse problems.
+        Broadly I am interested in inverse problems, learning theory, and 
+        generative models.
 
         I'm hoping to populate this page with what I'm working on soon!
         In the meantime, please feel free to reach out to me via email or Linkedin to connect!
@@ -92,48 +47,6 @@
 </div>
 
 <style lang="scss">
-  :global(body),
-  :global(body.dark),
-  :global(body .about),
-  :global(body .main),
-  :global(body .projects h3),
-  :global(body .blurb) {
-    transition: background-color 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
-  }
-
-  :global(body) {
-    background-color: #2e4057;
-    color: #fffcf9;
-    //font-family: 'Fira Code', monospace;
-    font-family: 'Work Sans';
-    margin: 0;
-    width: 100%;
-  }
-
-  :global(body.dark) {
-    background-color: #121212;
-    color: #e0e0e0;
-  }
-
-  :global(body.dark) .blurb {
-    text-shadow: 2px 2px 4px #111;
-  }
-
-  :global(body.dark) .about {
-    background-color: #1e1e1e;
-    color: #f0f0f0;
-  }
-
-  :global(body.dark) .main {
-    background-color: #1e1e1e;
-    color: #f0f0f0;
-  }
-
-  :global(body.dark) .projects h3 {
-    color: #ddd;
-  }
-
-
   .landing {
     display: flex;
     flex-direction: column;
@@ -156,7 +69,7 @@
     margin-right: 50px;
     margin-bottom: 25px;
     font-family: 'Fira Code', monospace;
-    text-shadow: 2px 2px 4px #000;
+    text-shadow: var(--blurb-text-shadow);
   }
 
   .about {
@@ -167,7 +80,7 @@
     align-items: center;
     height: 1000px;
     width: 100%;
-    background-color: #fffcf9;
+    background-color: var(--about-background-color);
     padding: 40px 0px;
   }
 
@@ -189,8 +102,8 @@
       font-size: 18px;
       padding: 0;
     }
-    background-color: #fffcf9;
-    color: black;
+    background-color: var(--main-background-color);
+    color: var(--main-text-color);
     font-family: 'Noto Serif', serif;
     font-size: 24px;
     font-weight: 100;
@@ -239,6 +152,7 @@
   .projects {
     h3 {
       font-weight: 400;
+      color: var(--projects-h3-color);
     }
   }
 </style>

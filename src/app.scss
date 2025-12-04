@@ -1,0 +1,55 @@
+:root {
+  --background-color: #2e4057;
+  --text-color: #fffcf9;
+  --about-background-color: #fffcf9;
+  --main-background-color: #fffcf9;
+  --main-text-color: black;
+  --projects-h3-color: #333;
+  --blurb-text-shadow: 2px 2px 4px #000;
+  --post-card-background-color: #fffcf9;
+  --post-card-text-color: #2e4057;
+  --post-background-color: #fffcf9;
+  --post-text-color: #2e4057;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: 'Work Sans';
+  margin: 0;
+  width: 100%;
+  transition: background-color 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+}
+
+body.dark {
+  --background-color: #121212;
+  --text-color: #e0e0e0;
+  --about-background-color: #1e1e1e;
+  --main-background-color: #1e1e1e;
+  --main-text-color: #f0f0f0;
+  --projects-h3-color: #ddd;
+  --blurb-text-shadow: 2px 2px 4px #111;
+  --post-card-background-color: #1e1e1e;
+  --post-card-text-color: #e0e0e0;
+  --post-background-color: #1e1e1e;
+  --post-text-color: #e0e0e0;
+
+  .landing {
+    position: relative;
+  }
+
+  .landing::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+
+  .landing > * {
+    z-index: 2;
+  }
+}

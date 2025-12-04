@@ -1,28 +1,56 @@
-<script>
-  import {createEventDispatcher} from "svelte";
+<script lang="ts">
+  import { darkMode } from '../../stores';
+  import { onMount } from 'svelte';
 
-  export let headerColor, headerTextColor;
-  const dispatch = createEventDispatcher();
+  let scrollDistance = 0;
+  let headerColor = 'rgb(0,0,0,0)';
+  let headerTextColor = 'FFFCF9';
+
+  onMount(() => {
+    function handleScroll() {
+      scrollDistance = window.scrollY;
+    }
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  });
+
+  $: {
+    if ($darkMode) {
+      if (scrollDistance < 100) {
+        [headerColor, headerTextColor] = ['rgba(0, 0, 0, 0)', '#FFFCF9'];
+      } else {
+        [headerColor, headerTextColor] = ['#121212', '#FFFCF9'];
+      }
+    } else {
+      if (scrollDistance < 100) {
+        [headerColor, headerTextColor] = ['rgba(0, 0, 0, 0)', '#FFFCF9'];
+      } else {
+        [headerColor, headerTextColor] = ['#2a3a52', '#FFFCF9'];
+      }
+    }
+  }
 
   function toggleDarkMode() {
-    dispatch('toggleDarkMode');
+    darkMode.update((value: boolean) => !value);
   }
 </script>
 
 <header
   class="sticky-header"
   style="
-
---headerColor: {headerColor};
-           --headerTextColor: {headerTextColor}"
+    --headerColor: {headerColor};
+    --headerTextColor: {headerTextColor};
+  "
 >
-  <div class="header-item">Jonathan Ma</div>
+  <a href="/" class="header-item">Jonathan Ma</a>
+  <div class="header-item">
+    <a href="/blog">Blog</a>
+  </div>
   <div class="spacer" />
-  <div class="header-item"
-    on:click={toggleDarkMode}>
+  <div class="header-item" on:click={toggleDarkMode}>
     <i  class="material-symbols-outlined">
-dark_mode
-</i>
+      dark_mode
+    </i>
   </div>
   <div class="header-item">
     <a href="https://github.com/jma02">
@@ -35,6 +63,7 @@ dark_mode
     </a>
   </div>
 </header>
+
 
 <style lang="scss">
 
@@ -65,6 +94,11 @@ dark_mode
     a {
       text-decoration: none;
       color: inherit;
+    }
+
+    &.header-item { // This targets the <a class="header-item"> specifically
+      text-decoration: none;
+      color: var(--headerTextColor); // Explicitly set the color
     }
 
     i {
