@@ -47,6 +47,11 @@
     background-image: url('/images/landing.gif');
     background-size: cover;
     background-attachment: fixed; // Add this line for parallax effect
+
+    @media screen and (max-width: 768px) {
+      background-attachment: scroll; // Remove fixed attachment for mobile
+      background-position: center center; // Center the GIF for better mobile display
+    }
   }
 
   .intro-container {
@@ -60,6 +65,13 @@
       font-size: 3rem; // Reduced font size
       font-weight: 500; // Reduced font weight;
       margin-bottom: 0.75rem; // Adjusted margin
+
+      @media screen and (max-width: 768px) {
+        font-size: 2rem; // Further reduce font size for mobile
+      }
+      @media screen and (max-width: 480px) {
+        font-size: 1.5rem; // Even smaller font size for very small screens
+      }
     }
   }
 
