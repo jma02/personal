@@ -51,7 +51,10 @@
     @media screen and (max-width: 768px) {
       background-attachment: scroll; // Remove fixed attachment for mobile
       background-position: center center; // Center the GIF for better mobile display
-      min-height: 60vh; // Reduce height for mobile
+      min-height: 40vh; // Further reduce height for mobile
+    }
+    @media screen and (max-width: 480px) {
+      min-height: 30vh; // Even smaller height for very small screens
     }
   }
 
