@@ -10,6 +10,13 @@
   --post-card-text-color: #2e4057;
   --post-background-color: #fffcf9;
   --post-text-color: #2e4057;
+  --card-background-color: #fffcf9;
+  --card-text-color: #2e4057;
+  --card-border-color: #2e4057;
+  --card-href-color: #2e4057;
+  --card-h3-color: #333;
+  --card-icon-color: #333;
+  --card-image-border-color: #2e4057;
 }
 
 body {
@@ -33,6 +40,13 @@ body.dark {
   --post-card-text-color: #e0e0e0;
   --post-background-color: #1e1e1e;
   --post-text-color: #e0e0e0;
+  --card-background-color: #1e1e1e;
+  --card-text-color: #e0e0e0;
+  --card-border-color: #888;
+  --card-href-color: #9fd3c7;
+  --card-h3-color: #ffffff;
+  --card-icon-color: #bbbbbb;
+  --card-image-border-color: #888;
 
   .landing {
     position: relative;

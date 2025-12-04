@@ -1,5 +1,6 @@
 <script lang="ts">
   import Header from '../../components/header.svelte';
+  import Math from '../../components/Math.svelte';
 </script>
 
 <Header />
@@ -11,6 +12,12 @@
       <p class="post-meta">Published on December 4, 2025</p>
     </header>
     <div class="post-content">
+      <p>
+        This is an example of a blog post with some mathematical expressions.
+        We can write inline math like <Math latex={`x_n \\gets x_{n-1} - \\nabla f(x_{n-1})`} /> or
+        display equations like this:
+      </p>
+      <Math latex={`\\int_0^\\infty e^{-x^2} dx = \\frac{\\sqrt{\\pi}}{2}`} displayMode={true} />
       <p>
       When I have some more interesting stuff to share, I'll put it here. Stay tuned!
       </p>
@@ -57,14 +64,6 @@
     font-family: 'Work Sans';
     font-size: 1.125rem;
     line-height: 1.6;
-
-    h2 {
-      font-family: 'Noto Serif', serif;
-      font-size: 1.8rem;
-      font-weight: 600;
-      margin-top: 2rem;
-      margin-bottom: 1rem;
-    }
 
     p {
       margin-bottom: 1rem;

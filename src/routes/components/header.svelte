@@ -42,7 +42,7 @@
     --headerTextColor: {headerTextColor};
   "
 >
-  <a href="/" class="header-item">Jonathan Ma</a>
+  <a href="/" class="header-item">Home</a>
   <div class="header-item">
     <a href="/blog">Blog</a>
   </div>

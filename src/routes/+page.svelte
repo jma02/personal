@@ -1,28 +1,13 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
-  import { fly } from 'svelte/transition';
-  import card from './components/card.svelte';
   import header from './components/header.svelte';
   import showcase from './components/showcase.svelte';
-
-  let showBlurb = false;
-  
-  onMount(() => {
-    showBlurb = true;
-  });
-
 </script>
 
 <svelte:component this={header} />
 <div class="landing">
-  <svelte:component this={card} />
-  {#if showBlurb}
-    <div class="blurb-container">
-      <div class="blurb">
-        <p in:fly={{ y: 500, duration: 1750 }}>Hi.</p>
-      </div>
-    </div>
-  {/if}
+  <div class="intro-container">
+    <h1>Jonathan Ma</h1>
+  </div>
 </div>
 
 <div class="about">
@@ -57,19 +42,25 @@
     }
     justify-content: space-evenly;
     align-items: center;
-    height: 1000px;
+    min-height: 100vh;
     width: 100%;
     background-image: url('/images/landing.gif');
     background-size: cover;
+    background-attachment: fixed; // Add this line for parallax effect
   }
 
-  .blurb {
-    font-size: 32px;
+  .intro-container {
     text-align: center;
-    margin-right: 50px;
-    margin-bottom: 25px;
-    font-family: 'Fira Code', monospace;
-    text-shadow: var(--blurb-text-shadow);
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3); // Soften text shadow
+    z-index: 2;
+
+    h1 {
+      font-family: 'Noto Serif', serif;
+      font-size: 3rem; // Reduced font size
+      font-weight: 500; // Reduced font weight;
+      margin-bottom: 0.75rem; // Adjusted margin
+    }
   }
 
   .about {
@@ -139,14 +130,6 @@
     @media screen and (max-width: 450px) {
       font-size: xx-large;
     }
-  }
-
-  .blurb-container {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: flex-end;
-    align-items: center;
   }
 
   .projects {
