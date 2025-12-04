@@ -51,6 +51,7 @@
     @media screen and (max-width: 768px) {
       background-attachment: scroll; // Remove fixed attachment for mobile
       background-position: center center; // Center the GIF for better mobile display
+      min-height: 60vh; // Reduce height for mobile
     }
   }
 
@@ -67,10 +68,10 @@
       margin-bottom: 0.75rem; // Adjusted margin
 
       @media screen and (max-width: 768px) {
-        font-size: 2rem; // Further reduce font size for mobile
+        font-size: 2.5rem; // Slightly larger font size for mobile
       }
       @media screen and (max-width: 480px) {
-        font-size: 1.5rem; // Even smaller font size for very small screens
+        font-size: 2rem; // Even smaller font size for very small screens, but larger than previous
       }
     }
   }
