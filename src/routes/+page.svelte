@@ -1,6 +1,5 @@
 <script lang="ts">
   import header from './components/header.svelte';
-  import showcase from './components/showcase.svelte';
 </script>
 
 <svelte:component this={header} />
@@ -15,18 +14,13 @@
     <div class="whoami">
       <header class="header-text">About me</header>
       <p>
-        I'm a graduate of the University of Delaware. I studied mathematics and computer science,
-        with a focus on applied mathematics.
-        Broadly I am interested in inverse problems, learning theory, and 
-        generative models.
-
-        I'm hoping to populate this page with what I'm working on soon!
-        In the meantime, please feel free to reach out to me via email or Linkedin to connect!
+        I'm a graduate of the University of Delaware. I studied mathematics and
+        computer science, with a focus on applied mathematics. Broadly I am
+        interested in inverse problems, learning theory, and generative models.
+        I'm hoping to populate this page with what I'm working on soon! In the
+        meantime, please feel free to reach out to me via email or Linkedin to
+        connect!
       </p>
-    </div>
-    <div class="projects">
-      <h3>Projects</h3>
-      <svelte:component this={showcase} />
     </div>
   </div>
 </div>
@@ -44,24 +38,20 @@
     align-items: center;
     min-height: 100vh;
     width: 100%;
-    background-image: url('/images/landing.gif');
-    background-size: cover;
-    background-attachment: fixed; // Add this line for parallax effect
+    background-color: transparent;
 
     @media screen and (max-width: 768px) {
-      background-attachment: scroll; // Remove fixed attachment for mobile
-      background-position: center center; // Center the GIF for better mobile display
-      min-height: 40vh; // Further reduce height for mobile
+      min-height: 40vh;
     }
     @media screen and (max-width: 480px) {
-      min-height: 30vh; // Even smaller height for very small screens
+      min-height: 30vh;
     }
   }
 
   .intro-container {
     text-align: center;
     color: white;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.3); // Soften text shadow
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); // Soften text shadow
     z-index: 2;
 
     h1 {
@@ -80,15 +70,37 @@
   }
 
   .about {
-
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     height: 1000px;
     width: 100%;
-    background-color: var(--about-background-color);
+    background-color: transparent;
     padding: 40px 0px;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 22% 0;
+      background-color: var(--about-background-color);
+      z-index: 1;
+    }
+
+    > * {
+      position: relative;
+      z-index: 3;
+    }
+  }
+
+  :global(body.dark) .about::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
   }
 
   .main {

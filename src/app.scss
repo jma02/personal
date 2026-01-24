@@ -25,7 +25,10 @@ body {
   font-family: 'Work Sans';
   margin: 0;
   width: 100%;
-  transition: background-color 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    text-shadow 0.3s ease;
 }
 
 body.dark {
