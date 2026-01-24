@@ -81,13 +81,10 @@
 
     let parallaxTarget = 0;
     let parallaxOffset = 0;
-    let enableParallax = window.matchMedia('(max-width: 768px)').matches;
+    let parallaxStrength = 0.08;
 
     const handleScroll = () => {
-      if (!enableParallax) {
-        return;
-      }
-      parallaxTarget = window.scrollY * 0.18;
+      parallaxTarget = window.scrollY * parallaxStrength;
     };
 
     const handleResize = () => {
@@ -96,14 +93,9 @@
       renderer.setSize(width, height, false);
       camera.aspect = width / height;
       camera.updateProjectionMatrix();
-      enableParallax = window.matchMedia('(max-width: 768px)').matches;
-      if (!enableParallax) {
-        parallaxTarget = 0;
-        parallaxOffset = 0;
-        if (container) {
-          container.style.transform = 'translate3d(0, 0, 0)';
-        }
-      }
+      parallaxStrength = window.matchMedia('(max-width: 768px)').matches
+        ? 0.18
+        : 0.08;
     };
 
     handleResize();
@@ -149,7 +141,7 @@
         line.halo.geometry = haloGeometry;
       });
 
-      if (enableParallax && container) {
+      if (container) {
         parallaxOffset += (parallaxTarget - parallaxOffset) * 0.08;
         container.style.transform = `translate3d(0, ${-parallaxOffset}px, 0)`;
       }

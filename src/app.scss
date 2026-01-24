@@ -37,7 +37,7 @@ body.dark {
   --background-color: #121212;
   --text-color: #e0e0e0;
   --about-background-color: #1e1e1e;
-  --about-band-color: #101010;
+  --about-band-color: #1e1e1e;
   --main-background-color: #1e1e1e;
   --main-text-color: #f0f0f0;
   --projects-h3-color: #ddd;
@@ -53,23 +53,4 @@ body.dark {
   --card-h3-color: #ffffff;
   --card-icon-color: #bbbbbb;
   --card-image-border-color: #888;
-
-  .landing {
-    position: relative;
-  }
-
-  .landing::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1;
-  }
-
-  .landing > * {
-    z-index: 2;
-  }
 }

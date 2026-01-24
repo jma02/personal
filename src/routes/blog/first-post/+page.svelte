@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Header from '../../components/header.svelte';
+  import Header from '../../components/Header.svelte';
   import Math from '../../components/Math.svelte';
 </script>
 

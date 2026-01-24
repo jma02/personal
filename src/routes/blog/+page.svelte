@@ -1,6 +1,6 @@
 <script lang="ts">
   import { fly } from 'svelte/transition';
-  import Header from '../components/header.svelte';
+  import Header from '../components/Header.svelte';
 
   const posts = [
     {

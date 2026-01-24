@@ -9,9 +9,9 @@
   const rickrollUrl = 'https://www.youtube.com/watch?v=xvFZjo5PgG0';
 
   onMount(() => {
-    function handleScroll() {
+    const handleScroll = () => {
       scrollDistance = window.scrollY;
-    }
+    };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   });
@@ -53,6 +53,9 @@
   <a href="/" class="header-item">Home</a>
   <div class="header-item">
     <a href="/blog">Blog</a>
+  </div>
+  <div class="header-item header-item-static">
+    <a href="/notes">Notes</a>
   </div>
   <div class="spacer" />
   <div class="header-item" on:click={toggleDarkMode}>
@@ -101,7 +104,6 @@
     background-color: var(--headerColor);
     transition: background-color 0.55s ease;
     color: var(--headerTextColor);
-    //font-family: 'Fira Code', monospace;
     font-family: 'Work Sans';
     font-weight: bold;
   }
@@ -119,9 +121,8 @@
     }
 
     &.header-item {
-      // This targets the <a class="header-item"> specifically
       text-decoration: none;
-      color: var(--headerTextColor); // Explicitly set the color
+      color: var(--headerTextColor);
     }
 
     i {
@@ -139,6 +140,12 @@
 
     &:last-of-type {
       padding-right: 20px;
+    }
+  }
+
+  .header-item-static {
+    &:hover {
+      transform: none;
     }
   }
 

@@ -3,7 +3,7 @@
   import { dev } from '$app/environment';
   import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
   import { onMount } from 'svelte';
-  import BackgroundGlow from './components/background-glow.svelte';
+  import Background from './components/Background.svelte';
   import { darkMode } from '../stores';
   import '../app.scss';
 
@@ -30,7 +30,7 @@
   });
 </script>
 
-<BackgroundGlow />
+<Background />
 <div class="page-content">
   <slot></slot>
 </div>
