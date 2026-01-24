@@ -1,18 +1,27 @@
-import { readdir, writeFile } from 'node:fs/promises';
+import { copyFile, mkdir, readdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 
+const sourceNotesDir = path.resolve('notes');
 const notesDir = path.resolve('static', 'notes');
 const manifestPath = path.resolve('src', 'lib', 'notes', 'pdf-manifest.ts');
 
 const main = async () => {
-  let files = [];
+  await mkdir(notesDir, { recursive: true });
+
+  let sourceFiles = [];
   try {
-    files = await readdir(notesDir);
+    sourceFiles = await readdir(sourceNotesDir);
   } catch (error) {
-    files = [];
+    sourceFiles = [];
   }
 
-  const pdfFiles = files
+  await Promise.all(
+    sourceFiles.map((file) =>
+      copyFile(path.join(sourceNotesDir, file), path.join(notesDir, file))
+    )
+  );
+
+  const pdfFiles = sourceFiles
     .filter((file) => file.toLowerCase().endsWith('.pdf'))
     .sort((a, b) => a.localeCompare(b));
 
