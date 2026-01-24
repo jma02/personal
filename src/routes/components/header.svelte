@@ -5,6 +5,9 @@
   let scrollDistance = 0;
   let headerColor = 'rgb(0,0,0,0)';
   let headerTextColor = 'FFFCF9';
+  const linkedInUrl = 'https://linkedin.com/in/ma-jonathan';
+  const rickrollUrl =
+    'https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1';
 
   onMount(() => {
     function handleScroll() {
@@ -33,6 +36,12 @@
   function toggleDarkMode() {
     darkMode.update((value: boolean) => !value);
   }
+
+  function handleLinkedInClick(event: MouseEvent) {
+    event.preventDefault();
+    const targetUrl = Math.random() < 0.3 ? rickrollUrl : linkedInUrl;
+    window.location.assign(targetUrl);
+  }
 </script>
 
 <header
@@ -48,25 +57,40 @@
   </div>
   <div class="spacer" />
   <div class="header-item" on:click={toggleDarkMode}>
-    <i  class="material-symbols-outlined">
-      dark_mode
-    </i>
+    <i class="material-symbols-outlined"> dark_mode </i>
   </div>
   <div class="header-item">
     <a href="https://github.com/jma02">
-      <i class="devicon-github-original" ></i>
+      <i class="devicon-github-original"></i>
     </a>
   </div>
   <div class="header-item">
-    <a href="https://linkedin.com/in/ma-jonathan">
+    <a href={linkedInUrl} on:click={handleLinkedInClick}>
       <i class="devicon-linkedin-plain"></i>
     </a>
   </div>
 </header>
 
+<svelte:head>
+  <link rel="dns-prefetch" href="https://www.youtube.com" />
+  <link rel="dns-prefetch" href="https://i.ytimg.com" />
+  <link rel="dns-prefetch" href="https://www.linkedin.com" />
+  <link
+    rel="preconnect"
+    href="https://www.youtube.com"
+    crossorigin="anonymous"
+  />
+  <link rel="preconnect" href="https://i.ytimg.com" crossorigin="anonymous" />
+  <link
+    rel="preconnect"
+    href="https://www.linkedin.com"
+    crossorigin="anonymous"
+  />
+  <link rel="prefetch" href={rickrollUrl} />
+  <link rel="prefetch" href={linkedInUrl} />
+</svelte:head>
 
 <style lang="scss">
-
   .sticky-header {
     position: fixed;
     display: flex;
@@ -83,7 +107,6 @@
     font-weight: bold;
   }
 
-
   .header-item {
     padding: 10px;
     font-size: 24px;
@@ -96,7 +119,8 @@
       color: inherit;
     }
 
-    &.header-item { // This targets the <a class="header-item"> specifically
+    &.header-item {
+      // This targets the <a class="header-item"> specifically
       text-decoration: none;
       color: var(--headerTextColor); // Explicitly set the color
     }

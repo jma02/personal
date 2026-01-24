@@ -79,16 +79,37 @@
       });
     }
 
+    let parallaxTarget = 0;
+    let parallaxOffset = 0;
+    let enableParallax = window.matchMedia('(max-width: 768px)').matches;
+
+    const handleScroll = () => {
+      if (!enableParallax) {
+        return;
+      }
+      parallaxTarget = window.scrollY * 0.18;
+    };
+
     const handleResize = () => {
       const width = window.innerWidth;
       const height = window.innerHeight;
       renderer.setSize(width, height, false);
       camera.aspect = width / height;
       camera.updateProjectionMatrix();
+      enableParallax = window.matchMedia('(max-width: 768px)').matches;
+      if (!enableParallax) {
+        parallaxTarget = 0;
+        parallaxOffset = 0;
+        if (container) {
+          container.style.transform = 'translate3d(0, 0, 0)';
+        }
+      }
     };
 
     handleResize();
+    handleScroll();
     window.addEventListener('resize', handleResize);
+    window.addEventListener('scroll', handleScroll, { passive: true });
 
     let animationFrame = 0;
     const startTime = performance.now();
@@ -128,6 +149,11 @@
         line.halo.geometry = haloGeometry;
       });
 
+      if (enableParallax && container) {
+        parallaxOffset += (parallaxTarget - parallaxOffset) * 0.08;
+        container.style.transform = `translate3d(0, ${-parallaxOffset}px, 0)`;
+      }
+
       renderer.render(scene, camera);
       animationFrame = window.requestAnimationFrame(animate);
     };
@@ -136,6 +162,7 @@
 
     return () => {
       window.removeEventListener('resize', handleResize);
+      window.removeEventListener('scroll', handleScroll);
       window.cancelAnimationFrame(animationFrame);
       lines.forEach((line) => {
         line.core.geometry.dispose();
@@ -173,6 +200,7 @@
     pointer-events: none;
     mix-blend-mode: screen;
     opacity: 0.9;
+    will-change: transform;
   }
 
   :global(body:not(.dark)) .background-glow {

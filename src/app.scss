@@ -2,6 +2,7 @@
   --background-color: #2e4057;
   --text-color: #fffcf9;
   --about-background-color: #fffcf9;
+  --about-band-color: #fffcf9;
   --main-background-color: #fffcf9;
   --main-text-color: black;
   --projects-h3-color: #333;
@@ -25,6 +26,7 @@ body {
   font-family: 'Work Sans';
   margin: 0;
   width: 100%;
+  zoom: 0.9;
   transition:
     background-color 0.3s ease,
     color 0.3s ease,
@@ -35,6 +37,7 @@ body.dark {
   --background-color: #121212;
   --text-color: #e0e0e0;
   --about-background-color: #1e1e1e;
+  --about-band-color: #101010;
   --main-background-color: #1e1e1e;
   --main-text-color: #f0f0f0;
   --projects-h3-color: #ddd;
