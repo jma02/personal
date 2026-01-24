@@ -6,8 +6,7 @@
   let headerColor = 'rgb(0,0,0,0)';
   let headerTextColor = 'FFFCF9';
   const linkedInUrl = 'https://linkedin.com/in/ma-jonathan';
-  const rickrollUrl =
-    'https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1';
+  const rickrollUrl = 'https://www.youtube.com/watch?v=xvFZjo5PgG0';
 
   onMount(() => {
     function handleScroll() {
