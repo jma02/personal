@@ -1,4 +1,3 @@
-
 <script lang="ts">
   import { fly } from 'svelte/transition';
   import Header from '../components/header.svelte';
@@ -8,8 +7,8 @@
       slug: 'first-post',
       title: 'First Blog Post',
       description: 'Hello world!',
-      date: '2025-12-04'
-    }
+      date: '2025-12-04',
+    },
   ];
 </script>
 
@@ -21,7 +20,11 @@
   </div>
   <div class="posts-container">
     {#each posts as post}
-      <a href="/blog/{post.slug}" class="post-card" in:fly={{ y: 50, duration: 500 }}>
+      <a
+        href="/blog/{post.slug}"
+        class="post-card"
+        in:fly={{ y: 50, duration: 500 }}
+      >
         <div class="post-title">{post.title}</div>
         <div class="post-description">{post.description}</div>
         <div class="post-date">{post.date}</div>
@@ -32,11 +35,12 @@
 
 <style lang="scss">
   .blog-container {
-    padding-top: 100px;
+    padding: 100px 2rem 3rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
+    box-sizing: border-box;
   }
 
   .blog-header {
@@ -55,7 +59,18 @@
     gap: 2rem;
     width: 100%;
     max-width: 1200px;
-    padding: 0 2rem;
+  }
+
+  @media screen and (max-width: 900px) {
+    .blog-container {
+      padding: 90px 1.5rem 2.5rem;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .blog-container {
+      padding: 80px 1.25rem 2rem;
+    }
   }
 
   .post-card {
@@ -64,7 +79,9 @@
     border-radius: 5px;
     padding: 1.5rem;
     text-decoration: none;
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    transition:
+      transform 0.2s ease-in-out,
+      box-shadow 0.2s ease-in-out;
 
     &:hover {
       transform: translateY(-5px);

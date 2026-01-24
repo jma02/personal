@@ -13,13 +13,18 @@
     </header>
     <div class="post-content">
       <p>
-        This is an example of a blog post with some mathematical expressions.
-        We can write inline math like <Math latex={`x_n \\gets x_{n-1} - \\nabla f(x_{n-1})`} /> or
-        display equations like this:
+        This is an example of a blog post with some mathematical expressions. We
+        can write inline math like <Math
+          latex={`x_n \\gets x_{n-1} - \\nabla f(x_{n-1})`}
+        /> or display equations like this:
       </p>
-      <Math latex={`\\int_0^\\infty e^{-x^2} dx = \\frac{\\sqrt{\\pi}}{2}`} displayMode={true} />
+      <Math
+        latex={`\\int_0^\\infty e^{-x^2} dx = \\frac{\\sqrt{\\pi}}{2}`}
+        displayMode={true}
+      />
       <p>
-      When I have some more interesting stuff to share, I'll put it here. Stay tuned!
+        When I have some more interesting stuff to share, I'll put it here. Stay
+        tuned!
       </p>
     </div>
   </article>
@@ -27,10 +32,10 @@
 
 <style lang="scss">
   .post-container {
-    padding-top: 100px;
+    padding: 100px 2rem 3rem;
     display: flex;
     justify-content: center;
-    // Removed padding: 2rem; to avoid conflicting with padding-top and potentially causing overlap
+    box-sizing: border-box;
   }
 
   .post {
@@ -40,6 +45,18 @@
     padding: 2rem;
     max-width: 800px;
     width: 100%;
+  }
+
+  @media screen and (max-width: 900px) {
+    .post-container {
+      padding: 90px 1.5rem 2.5rem;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .post-container {
+      padding: 80px 1.25rem 2rem;
+    }
   }
 
   .post-header {
