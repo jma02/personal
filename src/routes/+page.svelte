@@ -14,8 +14,7 @@
     <div class="whoami">
       <header class="header-text">Readme</header>
       <p>
-        I'm a graduate of the University of Delaware. I studied mathematics and
-        computer science, with a focus on applied mathematics. Broadly I am
+        I'm a graduate of the University of Delaware. I studied mathematics. Broadly I am
         interested in inverse problems, learning theory, and generative models.
         I'm hoping to populate this page with what I'm working on soon! In the
         meantime, please feel free to reach out to me via email or Linkedin (the
