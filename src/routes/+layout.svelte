@@ -11,19 +11,21 @@
   injectSpeedInsights();
 
   onMount(() => {
-    const prefersDark = window.matchMedia(
-      '(prefers-color-scheme: dark)'
-    ).matches;
-    if (prefersDark) {
-      darkMode.set(true);
+    const storedTheme = window.localStorage.getItem('theme');
+    const prefersDark = storedTheme ? storedTheme === 'dark' : true;
+    darkMode.set(prefersDark);
+    if (!storedTheme) {
+      window.localStorage.setItem('theme', prefersDark ? 'dark' : 'light');
     }
 
     darkMode.subscribe((value) => {
       if (typeof window !== 'undefined') {
         if (value) {
           document.body.classList.add('dark');
+          window.localStorage.setItem('theme', 'dark');
         } else {
           document.body.classList.remove('dark');
+          window.localStorage.setItem('theme', 'light');
         }
       }
     });
