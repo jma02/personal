@@ -2,10 +2,16 @@
   import { fly } from 'svelte/transition';
   import Header from '../components/Header.svelte';
 
-  export let data: { files: string[] };
+  type NoteEntry = {
+    name: string;
+    type: 'txt' | 'pdf';
+    href: string;
+  };
 
-  const isPdf = (file: string) => file.toLowerCase().endsWith('.pdf');
-  const fileIcon = (file: string) =>
+  export let data: { files: NoteEntry[] };
+
+  const isPdf = (file: NoteEntry) => file.type === 'pdf';
+  const fileIcon = (file: NoteEntry) =>
     isPdf(file) ? '/icons/file-pdf.svg' : '/icons/file-txt.svg';
 </script>
 
@@ -22,7 +28,7 @@
     {:else}
       {#each data.files as file}
         <a
-          href={isPdf(file) ? `/notes/raw/${file}` : `/notes/${file}`}
+          href={file.href}
           class="tree-file"
           target={isPdf(file) ? '_blank' : undefined}
           rel={isPdf(file) ? 'noopener noreferrer' : undefined}
@@ -34,7 +40,7 @@
             alt={isPdf(file) ? 'PDF file' : 'Text file'}
             loading="lazy"
           />
-          <span class="tree-name">{file}</span>
+          <span class="tree-name">{file.name}</span>
         </a>
       {/each}
     {/if}

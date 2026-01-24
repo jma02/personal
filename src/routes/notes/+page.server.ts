@@ -1,23 +1,31 @@
-import { error } from '@sveltejs/kit';
-import type { Dirent } from 'node:fs';
-import { readdir } from 'node:fs/promises';
-import path from 'node:path';
+type NoteEntry = {
+  name: string;
+  type: 'txt' | 'pdf';
+  href: string;
+};
 
-export const load = async () => {
-  try {
-    const notesDir = path.resolve('notes');
-    const entries = await readdir(notesDir, { withFileTypes: true });
-    const files = entries
-      .filter((entry: Dirent) => entry.isFile())
-      .map((entry: Dirent) => entry.name)
-      .filter((name: string) => {
-        const lowerName = name.toLowerCase();
-        return lowerName.endsWith('.txt') || lowerName.endsWith('.pdf');
-      })
-      .sort((a: string, b: string) => a.localeCompare(b));
+const textNotes = import.meta.glob('/notes/*.txt', { eager: true, as: 'raw' });
+const pdfNotes = import.meta.glob('/notes/*.pdf', { eager: true, as: 'url' });
 
-    return { files };
-  } catch (err) {
-    throw error(500, 'Unable to load notes');
-  }
+const toFileName = (filePath: string) => {
+  const parts = filePath.split('/');
+  return parts[parts.length - 1] ?? filePath;
+};
+
+export const load = () => {
+  const entries: NoteEntry[] = [];
+
+  Object.keys(textNotes).forEach((filePath) => {
+    const name = toFileName(filePath);
+    entries.push({ name, type: 'txt', href: `/notes/${name}` });
+  });
+
+  Object.entries(pdfNotes).forEach(([filePath, url]) => {
+    const name = toFileName(filePath);
+    entries.push({ name, type: 'pdf', href: url as string });
+  });
+
+  entries.sort((a, b) => a.name.localeCompare(b.name));
+
+  return { files: entries };
 };
