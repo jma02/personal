@@ -4,8 +4,9 @@ type NoteEntry = {
   href: string;
 };
 
+import { pdfNotes } from '../../lib/notes/pdf-manifest';
+
 const textNotes = import.meta.glob('/notes/*.txt', { eager: true, as: 'raw' });
-const pdfNotes = import.meta.glob('/notes/*.pdf', { eager: true, as: 'url' });
 
 const toFileName = (filePath: string) => {
   const parts = filePath.split('/');
@@ -20,9 +21,8 @@ export const load = () => {
     entries.push({ name, type: 'txt', href: `/notes/${name}` });
   });
 
-  Object.entries(pdfNotes).forEach(([filePath, url]) => {
-    const name = toFileName(filePath);
-    entries.push({ name, type: 'pdf', href: url as string });
+  pdfNotes.forEach((name: string) => {
+    entries.push({ name, type: 'pdf', href: `/notes/${name}` });
   });
 
   entries.sort((a, b) => a.name.localeCompare(b.name));
