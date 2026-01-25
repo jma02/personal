@@ -15,7 +15,7 @@
     overflow: hidden;
     @media screen and (max-width: 1200px) {
       gap: 0;
-      height: 1250px;
+      min-height: 50vh;
     }
     justify-content: space-evenly;
     align-items: center;
@@ -24,10 +24,14 @@
     background-color: transparent;
 
     @media screen and (max-width: 768px) {
-      min-height: 40vh;
+      min-height: 35vh;
+      justify-content: flex-end;
+      padding-bottom: 10px;
     }
     @media screen and (max-width: 480px) {
       min-height: 30vh;
+      justify-content: flex-end;
+      padding-bottom: 10px;
     }
   }
 

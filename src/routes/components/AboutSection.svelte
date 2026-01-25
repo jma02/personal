@@ -1,7 +1,7 @@
 <div class="about">
   <div class="main">
     <div class="whoami">
-      <header class="header-text">Readme</header>
+      <header class="header-text">About me</header>
       <p>
         I'm a graduate of the University of Delaware. I studied mathematics, focusing on applied mathematics. My research interests are broadly related to  
         inverse problems, learning theory, and generative models.
