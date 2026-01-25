@@ -21,17 +21,37 @@
   $: {
     if ($darkMode) {
       if (scrollDistance < 100) {
-        [headerColor, headerTextColor, homeButtonColor] = ['rgba(0, 0, 0, 0)', '#FFFCF9', '#FFFCF9'];
+        [headerColor, headerTextColor, homeButtonColor] = [
+          'rgba(0, 0, 0, 0)',
+          '#FFFCF9',
+          '#FFFCF9',
+        ];
       } else {
-        [headerColor, headerTextColor, homeButtonColor] = ['#121212', '#FFFCF9', '#FFFCF9'];
+        [headerColor, headerTextColor, homeButtonColor] = [
+          '#121212',
+          '#FFFCF9',
+          '#FFFCF9',
+        ];
       }
     } else {
       if (menuOpen && scrollDistance < 100) {
-        [headerColor, headerTextColor, homeButtonColor] = ['rgba(0, 0, 0, 0)', '#2a3a52', '#FFFCF9'];
+        [headerColor, headerTextColor, homeButtonColor] = [
+          'rgba(0, 0, 0, 0)',
+          '#2a3a52',
+          '#FFFCF9',
+        ];
       } else if (scrollDistance < 100) {
-        [headerColor, headerTextColor, homeButtonColor] = ['rgba(0, 0, 0, 0)', '#FFFCF9', '#FFFCF9'];
+        [headerColor, headerTextColor, homeButtonColor] = [
+          'rgba(0, 0, 0, 0)',
+          '#FFFCF9',
+          '#FFFCF9',
+        ];
       } else {
-        [headerColor, headerTextColor, homeButtonColor] = ['#2a3a52', '#FFFCF9', '#FFFCF9'];
+        [headerColor, headerTextColor, homeButtonColor] = [
+          '#2a3a52',
+          '#FFFCF9',
+          '#FFFCF9',
+        ];
       }
     }
   }
@@ -50,7 +70,7 @@
 
   function handleLinkedInClick(event: MouseEvent) {
     event.preventDefault();
-    const targetUrl = Math.random() < 0.3 ? rickrollUrl : linkedInUrl;
+    const targetUrl = Math.random() < 0.005 ? rickrollUrl : linkedInUrl;
     window.location.assign(targetUrl);
   }
 </script>
@@ -348,7 +368,7 @@
     background-color: #1a1a1a;
 
     a {
-      color: #FFFCF9;
+      color: #fffcf9;
       border-bottom: 1px solid rgba(255, 252, 249, 0.08);
     }
 
@@ -357,7 +377,7 @@
     }
 
     .menu-item i {
-      color: #FFFCF9;
+      color: #fffcf9;
     }
   }
 </style>
