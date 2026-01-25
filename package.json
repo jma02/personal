@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "vite dev",
+    "predev": "node scripts/generate-pdf-manifest.js",
     "build": "vite build",
+    "prebuild": "node scripts/generate-pdf-manifest.js",
     "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
