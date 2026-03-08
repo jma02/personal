@@ -85,7 +85,7 @@
 
   .note-title {
     font-family: 'Noto Serif', serif;
-    font-size: clamp(2.1rem, 5vw, 3.6rem);
+    font-size: clamp(1.95rem, 4.2vw, 3.1rem);
     font-weight: 400;
     line-height: 1.05;
     letter-spacing: -0.04em;

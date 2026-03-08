@@ -87,7 +87,7 @@
 
     h1 {
       font-family: 'Noto Serif', serif;
-      font-size: clamp(2.8rem, 6vw, 4.5rem);
+      font-size: clamp(2.3rem, 4.8vw, 3.7rem);
       font-weight: 400;
       margin: 0;
       letter-spacing: -0.04em;

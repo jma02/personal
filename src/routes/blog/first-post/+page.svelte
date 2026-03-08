@@ -96,7 +96,7 @@
 
   .post-header h1 {
     font-family: 'Noto Serif', serif;
-    font-size: clamp(2.4rem, 5vw, 4.4rem);
+    font-size: clamp(2.1rem, 4.3vw, 3.6rem);
     font-weight: 400;
     line-height: 1.02;
     letter-spacing: -0.045em;
