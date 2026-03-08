@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { fade, fly } from 'svelte/transition';
   import Header from '../components/Header.svelte';
   import { blogPosts } from '$lib/blog/posts';
 
@@ -16,14 +15,14 @@
 <Header />
 
 <section class="blog-page">
-  <div class="blog-hero" in:fly={{ y: 24, duration: 360 }}>
+  <div class="blog-hero">
     <h1>Blog</h1>
     <p class="blog-intro">
       Posts about things I'm learning, building, or thinking about.
     </p>
   </div>
 
-  <div class="blog-ledger" in:fade={{ duration: 260 }}>
+  <div class="blog-ledger">
     <div class="ledger-bar">
       <span>page/{String(blogPosts.length).padStart(2, '0')}</span>
       <span
@@ -34,11 +33,7 @@
     </div>
 
     {#if featuredPost}
-      <a
-        href="/blog/{featuredPost.slug}"
-        class="feature-post"
-        in:fly={{ y: 30, duration: 380, delay: 70 }}
-      >
+      <a href="/blog/{featuredPost.slug}" class="feature-post">
         <div class="feature-meta">
           <span>{featuredPost.section}</span>
           <span>{formatDate(featuredPost.date)}</span>
@@ -59,11 +54,7 @@
     {#if archivePosts.length > 0}
       <div class="archive-list">
         {#each archivePosts as post, index}
-          <a
-            href="/blog/{post.slug}"
-            class="archive-row"
-            in:fly={{ y: 22, duration: 320, delay: 120 + index * 50 }}
-          >
+          <a href="/blog/{post.slug}" class="archive-row">
             <span class="archive-index"
               >{String(index + 2).padStart(2, '0')}</span
             >
