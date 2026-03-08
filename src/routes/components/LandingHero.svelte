@@ -2,73 +2,97 @@
   export let title = 'Jonathan Ma';
 </script>
 
-<div class="landing">
-  <div class="intro-container">
+<section class="landing">
+  <div class="hero-copy">
     <h1>{title}</h1>
+    <p class="dek">
+      Inverse problems, machine learning (generative models, distillation, and
+      one-shot inference), learning theory, and MCMC.
+    </p>
+    <nav class="hero-links" aria-label="Primary">
+      <a href="/notes">Notes</a>
+      <span>/</span>
+      <a href="/blog">Blog</a>
+    </nav>
   </div>
-</div>
+</section>
 
 <style lang="scss">
   .landing {
     display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    @media screen and (max-width: 1200px) {
-      gap: 0;
-      min-height: 50vh;
-    }
-    justify-content: space-evenly;
-    align-items: center;
-    min-height: 100vh;
+    justify-content: center;
     width: 100%;
-    background-color: transparent;
-
-    @media screen and (max-width: 768px) {
-      min-height: 35vh;
-      justify-content: flex-end;
-      padding-bottom: 10px;
-    }
-    @media screen and (max-width: 480px) {
-      min-height: 30vh;
-      justify-content: flex-end;
-      padding-bottom: 10px;
-    }
+    padding: 0 2rem;
+    box-sizing: border-box;
   }
 
-  .intro-container {
-    text-align: center;
-    color: white;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-    z-index: 2;
+  .hero-copy {
+    width: min(760px, 100%);
+    padding: 0;
+    color: var(--post-card-text-color);
 
     h1 {
+      margin: 0;
       font-family: 'Noto Serif', serif;
-      font-size: 3rem;
-      font-weight: 500;
-      margin-bottom: 0.75rem;
+      font-size: clamp(2.7rem, 6vw, 4rem);
+      line-height: 1;
+      letter-spacing: -0.04em;
+      font-weight: 400;
+    }
+  }
 
-      @media screen and (max-width: 768px) {
-        font-size: 2.5rem;
+  .dek {
+    margin: 0;
+    font-family: 'Work Sans';
+    margin-top: 0.85rem;
+    font-size: clamp(1rem, 1.3vw, 1.08rem);
+    line-height: 1.7;
+    max-width: 36rem;
+    color: var(--post-card-text-color);
+    opacity: 0.84;
+  }
+
+  .hero-links {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    margin-top: 0.9rem;
+    font-family: 'Work Sans';
+    font-size: 0.92rem;
+
+    span {
+      opacity: 0.38;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      padding-bottom: 0.12rem;
+      transition:
+        border-color 0.18s ease,
+        color 0.18s ease;
+
+      &:hover {
+        border-bottom-color: color-mix(in srgb, currentColor 42%, transparent);
       }
-      @media screen and (max-width: 480px) {
-        font-size: 2rem;
+
+      &:focus-visible {
+        outline: 2px solid color-mix(in srgb, var(--card-href-color) 60%, white);
+        outline-offset: 4px;
       }
     }
   }
 
-  :global(body.dark) .landing {
-    position: relative;
+  @media screen and (max-width: 900px) {
+    .landing {
+      padding: 0 1.5rem;
+    }
   }
 
-  :global(body.dark) .landing::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1;
-  }
-
-  :global(body.dark) .landing > * {
-    z-index: 2;
+  @media screen and (max-width: 640px) {
+    .landing {
+      padding: 0 1.25rem;
+    }
   }
 </style>

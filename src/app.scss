@@ -1,38 +1,4 @@
 :root {
-  --background-color: #2e4057;
-  --text-color: #fffcf9;
-  --about-background-color: #fffcf9;
-  --about-band-color: #fffcf9;
-  --main-background-color: #fffcf9;
-  --main-text-color: black;
-  --projects-h3-color: #333;
-  --blurb-text-shadow: 2px 2px 4px #000;
-  --post-card-background-color: #fffcf9;
-  --post-card-text-color: #2e4057;
-  --post-background-color: #fffcf9;
-  --post-text-color: #2e4057;
-  --card-background-color: #fffcf9;
-  --card-text-color: #2e4057;
-  --card-border-color: #2e4057;
-  --card-href-color: #2e4057;
-  --card-h3-color: #333;
-  --card-icon-color: #333;
-  --card-image-border-color: #2e4057;
-}
-
-body {
-  background-color: var(--background-color);
-  color: var(--text-color);
-  font-family: 'Work Sans';
-  margin: 0;
-  width: 100%;
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease,
-    text-shadow 0.3s ease;
-}
-
-body.dark {
   --background-color: #121212;
   --text-color: #e0e0e0;
   --about-background-color: #1e1e1e;
@@ -52,4 +18,16 @@ body.dark {
   --card-h3-color: #ffffff;
   --card-icon-color: #bbbbbb;
   --card-image-border-color: #888;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: 'Work Sans';
+  margin: 0;
+  width: 100%;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    text-shadow 0.3s ease;
 }

@@ -61,7 +61,7 @@
     <div class="showcase-item">
       <div class="showcase-item-header">kapper</div>
       <div class="showcase-item-content">
-        <img src="/images/kapper.png" class="img" alt="kapper showcase image" />
+        <img src="/images/kapper.png" class="img" alt="kapper screenshot" />
         <p>
           Using deep learning to show you your next hairstyle. <br />
           <a href="https://github.com/jma02/kapperAI-frontend">[code]</a>
@@ -78,7 +78,7 @@
     <div class="showcase-item">
       <div class="showcase-item-header">Ada.ai</div>
       <div class="showcase-item-content">
-        <img src="/images/ada.png" class="img" alt="ada.ai showcase image" />
+        <img src="/images/ada.png" class="img" alt="ada.ai screenshot" />
         <p>
           Re-envisioning how students study for CS101.<br />
           <a href="https://github.com/jma02/ada.ai">[code]</a>
@@ -134,48 +134,51 @@
 <style lang="scss">
   :global(body),
   :global(body .showcase) {
-    transition: background-color 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease,
+      text-shadow 0.3s ease;
   }
-  :global(body.dark) .showcase {
+  .showcase {
     background-color: #1e1e1e;
     color: #e0e0e0;
     border-color: #888;
   }
 
-  :global(body.dark) .navbar {
+  .navbar {
     background-color: #2c2c2c;
     border-color: #888;
   }
 
-  :global(body.dark) .navbar-item-selected {
+  .navbar-item-selected {
     box-shadow: inset 3px 0 0 #888;
     @media screen and (max-width: 750px) {
       box-shadow: inset 0 -3px 0 #888;
     }
   }
 
-  :global(body.dark) .showcase-item-header {
+  .showcase-item-header {
     background-color: #2c2c2c;
     color: #f0f0f0;
     border-color: #888;
   }
 
-  :global(body.dark) .showcase-item-content {
+  .showcase-item-content {
     color: #d0d0d0;
   }
 
-  :global(body.dark) a {
+  a {
     color: #9fd3c7;
   }
 
-  :global(body.dark) .img {
+  .img {
     border-color: #888;
   }
 
-  :global(body.dark) .icon,
-  :global(body.dark) .mongo,
-  :global(body.dark) .ada,
-  :global(body.dark) .barber-pole {
+  .icon,
+  .mongo,
+  .ada,
+  .barber-pole {
     filter: brightness(0.85);
   }
 

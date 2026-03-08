@@ -4,6 +4,7 @@
 
   type NoteEntry = {
     name: string;
+    title: string;
     type: 'txt' | 'pdf';
     href: string;
   };
@@ -13,43 +14,65 @@
   const isPdf = (file: NoteEntry) => file.type === 'pdf';
   const fileIcon = (file: NoteEntry) =>
     isPdf(file) ? '/icons/file-pdf.svg' : '/icons/file-txt.svg';
+  const textCount = data.files.filter((file) => file.type === 'txt').length;
+  const pdfCount = data.files.length - textCount;
 </script>
 
 <Header />
 
-<div class="notes-container">
+<section class="notes-container">
   <div class="notes-header">
     <h1>Notes</h1>
+    <p class="notes-subtitle">Typeset class notes and paper notes.</p>
   </div>
-  <div class="notes-tree">
-    <div class="tree-root">notes/</div>
-    {#if data.files.length === 0}
-      <div class="tree-empty">(empty)</div>
-    {:else}
-      {#each data.files as file}
-        <a
-          href={file.href}
-          class="tree-file"
-          target={isPdf(file) ? '_blank' : undefined}
-          rel={isPdf(file) ? 'noopener noreferrer' : undefined}
-          in:fly={{ y: 24, duration: 350 }}
-        >
-          <img
-            class="tree-icon"
-            src={fileIcon(file)}
-            alt={isPdf(file) ? 'PDF file' : 'Text file'}
-            loading="lazy"
-          />
-          <span class="tree-name">{file.name}</span>
-        </a>
-      {/each}
-    {/if}
+
+  <div class="notes-tree-shell">
+    <div class="notes-tree-toolbar">
+      <div class="tree-stats" aria-label="Note counts">
+        <span>{data.files.length} total</span>
+        <span>{textCount} txt</span>
+        <span>{pdfCount} pdf</span>
+      </div>
+    </div>
+
+    <div class="notes-tree">
+      {#if data.files.length === 0}
+        <div class="tree-empty">(empty)</div>
+      {:else}
+        {#each data.files as file, index}
+          <a
+            href={file.href}
+            class="tree-file"
+            target={isPdf(file) ? '_blank' : undefined}
+            rel={isPdf(file) ? 'noopener noreferrer' : undefined}
+            in:fly={{ y: 24, duration: 320, delay: index * 45 }}
+          >
+            <span class="tree-index">{String(index + 1).padStart(2, '0')}</span>
+            <div class="tree-file-main">
+              <div class="tree-file-label">
+                <img
+                  class="tree-icon"
+                  src={fileIcon(file)}
+                  alt={isPdf(file) ? 'PDF file' : 'Text file'}
+                  loading="lazy"
+                />
+                <span class="tree-name">{file.title}</span>
+              </div>
+              <div class="tree-file-meta">
+                <span class="tree-type">{file.type}</span>
+                <span class="tree-action">{isPdf(file) ? 'Open' : 'Read'}</span>
+              </div>
+            </div>
+          </a>
+        {/each}
+      {/if}
+    </div>
   </div>
-</div>
+</section>
 
 <style lang="scss">
   .notes-container {
-    padding: 100px 2rem 3rem;
+    padding: 108px 2rem 3.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -60,68 +83,167 @@
   .notes-header {
     text-align: center;
     margin-bottom: 2rem;
+    max-width: 42rem;
 
     h1 {
       font-family: 'Noto Serif', serif;
-      font-size: 3rem;
+      font-size: clamp(2.8rem, 6vw, 4.5rem);
       font-weight: 400;
-      margin-bottom: 0.5rem;
+      margin: 0;
+      letter-spacing: -0.04em;
     }
   }
 
   .notes-subtitle {
     font-family: 'Work Sans';
-    font-size: 1rem;
+    font-size: 1.03rem;
+    line-height: 1.65;
     opacity: 0.8;
-    margin: 0;
+    margin: 1rem 0 0;
+  }
+
+  .notes-tree-shell {
+    width: 100%;
+    max-width: 860px;
+    background-color: var(--post-card-background-color);
+    color: var(--post-card-text-color);
+    border: 1px solid
+      color-mix(in srgb, var(--card-border-color) 16%, transparent);
+    border-radius: 24px;
+    padding: 1.1rem;
+    font-family: 'Fira Code', monospace;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.14);
+    overflow: hidden;
+    backdrop-filter: blur(8px);
+  }
+
+  .notes-tree-toolbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.9rem 1rem 1.1rem;
+    border-bottom: 1px solid
+      color-mix(in srgb, var(--card-border-color) 12%, transparent);
   }
 
   .notes-tree {
-    width: 100%;
-    max-width: 720px;
-    background-color: var(--post-card-background-color);
-    color: var(--post-card-text-color);
-    border-radius: 8px;
-    padding: 1.75rem 2rem;
-    font-family: 'Fira Code', monospace;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    padding-top: 0.35rem;
   }
 
-  .tree-root {
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
+  .tree-stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.55rem;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    opacity: 0.7;
   }
 
   .tree-file {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
     align-items: center;
-    gap: 0.75rem;
+    gap: 1rem;
     text-decoration: none;
     color: inherit;
-    padding: 0.35rem 0;
+    padding: 1rem;
+    border-radius: 18px;
     transition:
       transform 0.2s ease,
-      color 0.2s ease;
+      color 0.2s ease,
+      background-color 0.2s ease;
 
     &:hover {
       transform: translateX(2px);
       color: var(--card-href-color);
+      background-color: color-mix(
+        in srgb,
+        var(--background-color) 12%,
+        transparent
+      );
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid
+        color-mix(in srgb, var(--card-border-color) 10%, transparent);
+      border-radius: 0;
+    }
+
+    &:focus-visible {
+      outline: 2px solid color-mix(in srgb, var(--card-href-color) 65%, white);
+      outline-offset: 4px;
     }
   }
 
-  .tree-branch {
-    opacity: 0.6;
+  .tree-index {
+    font-size: 0.78rem;
+    opacity: 0.48;
+    min-width: 2ch;
+  }
+
+  .tree-file-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-width: 0;
+  }
+
+  .tree-file-label {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    min-width: 0;
   }
 
   .tree-icon {
-    width: 28px;
-    height: 28px;
+    width: 30px;
+    height: 30px;
     flex-shrink: 0;
+  }
+
+  .tree-name {
+    font-size: 0.98rem;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+
+  .tree-file-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-shrink: 0;
+  }
+
+  .tree-type,
+  .tree-action {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  .tree-type {
+    padding: 0.35rem 0.55rem;
+    border-radius: 999px;
+    background-color: color-mix(
+      in srgb,
+      var(--background-color) 12%,
+      transparent
+    );
+  }
+
+  .tree-action {
+    opacity: 0.58;
   }
 
   .tree-empty {
     opacity: 0.6;
+    padding: 1rem;
   }
 
   @media screen and (max-width: 900px) {
@@ -135,8 +257,24 @@
       padding: 80px 1.25rem 2rem;
     }
 
-    .notes-tree {
-      padding: 1.5rem;
+    .notes-tree-shell {
+      border-radius: 20px;
+      padding: 0.85rem;
+    }
+
+    .notes-tree-toolbar,
+    .tree-file-main {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    .tree-file {
+      gap: 0.85rem;
+      padding: 0.95rem 0.8rem;
+    }
+
+    .tree-file-meta {
+      gap: 0.6rem;
     }
   }
 </style>
