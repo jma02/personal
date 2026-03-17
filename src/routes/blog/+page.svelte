@@ -17,9 +17,7 @@
 <section class="blog-page">
   <div class="blog-hero">
     <h1>Blog</h1>
-    <p class="blog-intro">
-      Posts about things I'm learning, building, or thinking about.
-    </p>
+    <p class="blog-intro">Stuff I find interesting</p>
   </div>
 
   <div class="blog-ledger">
