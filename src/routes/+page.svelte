@@ -16,6 +16,7 @@
     </p>
     <p>
       Outside of work, I'm a big fan of competitive programming, Olympic weightlifting, and poker.
+      In a past life I enjoyed Magic: The Gathering.
     </p>
     <p>
       Apparently I have approximately perfect pitch (49/50 with stddev maybe .1?):
